@@ -104,10 +104,7 @@
             type: "post",
             url: "/photoToWords.php",
             // contentType: "json",
-            data: {
-                "openid": openid,
-                "picture": res 
-            }
+            data: JSON.stringify(dt)
         }).then((res) => {
             console.log(res);
             // alert(res);
