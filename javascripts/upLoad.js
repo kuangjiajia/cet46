@@ -95,7 +95,7 @@
             error: function(res) {
                 console.log(res);
             },
-            contentType: "application/json; charset=utf-8",
+            // contentType: "application/json; charset=utf-8",
             dataType: "json"
         }); 
     }
