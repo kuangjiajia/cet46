@@ -86,7 +86,7 @@
         upLoad(dt);       
         $.ajax({
             type: 'POST',
-            url: "/test.php",
+            url: "/photoToWords.php",
             data: dt,
             success: function(res) {
                 console.log(res);
