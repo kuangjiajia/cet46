@@ -83,17 +83,30 @@
         let index = search.indexOf("=");    
         let openid = search.substr(index+1);
         console.log(openid);
-        ajax({
-            type: "post",
+        $.ajax({
+            type: 'POST',
             url: "/photoToWords.php",
             data: {
                 "openid": openid,
-                "picture": res 
-            }
-        }).then((res) => {
-            console.log(res);
-            // alert(res);
-        })
+                "picture": res     
+            },
+            success: function(res) {
+                console.log(res);
+            },
+            dataType: "json"
+          });
+        // ajax({
+        //     type: "post",
+        //     url: "/photoToWords.php",
+        //     contentType: "json",
+        //     data: {
+        //         "openid": openid,
+        //         "picture": res 
+        //     }
+        // }).then((res) => {
+        //     console.log(res);
+        //     // alert(res);
+        // })
         //图片大小限制
     }
     
