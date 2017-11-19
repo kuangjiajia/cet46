@@ -86,13 +86,10 @@
         ajax({
             type: "post",
             url: "/photoToWords.php",
-            data: {
-                "openid": openid,
-                "picture": res 
-            }
+            data: "openid="+openid + "&picture=" + res 
         }).then((res) => {
             console.log(res);
-            alert(res);
+            // alert(res);
         })
         //图片大小限制
     }
