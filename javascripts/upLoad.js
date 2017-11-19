@@ -59,6 +59,16 @@
             prebox.style.display = "none";
             selectimgbox.style.display = "block";
             inp.value = "";
+            $.ajax({
+                type: 'POST',
+                url: "/photoToWords.php",
+                data: dt,
+                success: function(res) {
+                    console.log(res);
+                    console.log(123123);
+                },
+                dataType: "json"
+            });
 		})
 	}
 
@@ -74,7 +84,6 @@
             preimg.style.width = document.body.clientWidth + "px";
             console.log(document.body.clientWidth);
         },0)
-        upLoad(res);
         registLogin();
         let search = window.location.search;
         let index = search.indexOf("=");    
@@ -84,17 +93,8 @@
             "openid": openid,
             "picture": res  
         }
+        upLoad(dt);        
         // console.log(dt);
-        $.ajax({
-            type: 'POST',
-            url: "/photoToWords.php",
-            data: dt,
-            success: function(res) {
-                console.log(res);
-                console.log(123123);
-            },
-            dataType: "json"
-        });
 	    // console.log(res);
         // ajax({
         //     type: "post",
