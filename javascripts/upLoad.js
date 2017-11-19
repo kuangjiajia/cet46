@@ -67,6 +67,9 @@
                     console.log(res);
                     console.log(123123);
                 },
+                error: function(res) {
+                    console.log(res);
+                },
                 dataType: "json"
             });
 		})
