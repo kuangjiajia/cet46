@@ -45,11 +45,11 @@ function ajax(json) {
       jsonp(resolve);
     }else {
       let xhr = new XMLHttpRequest();
+      setData();
+      xhr.open(type,url,async);
       if(type === 'post') {
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
       }
-      setData();
-      xhr.open(type,url,async);
       xhr.onreadystatechange = function() {
         if(xhr.readyState === 4) {
           if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
