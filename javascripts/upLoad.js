@@ -93,7 +93,7 @@
             success: function(res) {
                 console.log(res);
             },
-            dataType: "json"
+            // dataType: "json"
           });
         // ajax({
         //     type: "post",
