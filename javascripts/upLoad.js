@@ -82,14 +82,11 @@
             "openid": openid,
             "picture": res  
         }
-        console.log(dt);
+        // console.log(dt);
         $.ajax({
             type: 'POST',
             url: "/photoToWords.php",
-            data: {
-                "openid": openid,
-                "picture": res     
-            },
+            data: dt,
             success: function(res) {
                 console.log(res);
                 console.log(123123);
