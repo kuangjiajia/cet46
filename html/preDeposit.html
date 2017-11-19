@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>预存</title>
+    <link rel="stylesheet" href="../stylesheets/preDeposit.css">
+    <link rel="stylesheet" href="../stylesheets/base.css">
+    <script type="text/javascript" src="../javascripts/mobile.js"></script>
+  </head>
+  <body>
+    <header class="head"></header>
+    <div class="content">
+      <h1 class="card-message">
+        <span class="icon"></span>
+        <span>准考证信息</span>
+        <button class="take-photo">拍照预存 
+          <input id="selectimginp" type="file" capture="camera"/>				
+        </button>
+      </h1>
+      <div class="stu-name">
+        <input type="text" placeholder="姓名" class="name">
+      </div>
+      <div class="card-number">
+        <input type="text" placeholder="证号" class="card">        
+      </div>
+      <h1 class="notice-method">
+        <span class="icon"></span>
+        <span>通知方式</span>
+      </h1>
+      <div class="notice-content">
+        2017年12月底考试成绩查询将在2018x月xx日上午x点可查，
+        预约成功过后，预约接口将在查询通道开放过后，进行重邮小帮手的微信同步推送你的成绩单哦～
+      </div>
+      <button class="submit" href="./depositSuccess.html">提交</button>
+    </div>
+    <footer>
+      <p>
+          <a href="#">意见反馈@红岩网校</a>          
+      </p>      
+      <p>2017红岩网校工作站</p>
+    </footer>
+    <div id="prebox">
+        <img id="preimg" src=""/>
+        <button class="upPhoto">上传照片</button>
+    </div>
+      <!--裁剪图像层-->
+    <div id="cutbox"></div>
+      <!-- 裁剪图像数据上传层 -->
+      <input type="hidden" name="imgdata" id="imgdata" />
+      <!-- 用户选择图像层 -->
+    <div id="selectimgbox" style="display: block;">
+    </div>
+  </body>
+</html>
+<script type="text/javascript" src="../javascripts/mkgo-crop.js" ></script>
+<script type="text/javascript" src="../javascripts/upLoad.js"></script>
+<script>
+
+// var btn = document.querySelector(".submit");
+// btn.addEventListener("click",() => {
+//   var username = document.querySelector(".name").value;
+//   var studentId = document.querySelector(".card").value;
+//   var data = {
+//     "username": username,
+//     "studentId": studentId
+//   }
+//   ajax({
+//     "url": "",
+//     "data": data,
+//     "success": () => {
+//       //跳转
+//     },
+//     "error": () => {
+//       //
+//     }
+//   })
+// })
+
+</script>

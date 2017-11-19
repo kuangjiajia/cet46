@@ -1,0 +1,6 @@
+{
+    "appId": "wx14933ed9b6667149",
+    "timestamp": "1510213966221",
+    "nonceStr": result.nonceStr, 
+    signature: result.signature,
+}

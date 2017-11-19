@@ -1,0 +1,40 @@
+html,body,header,div,p,h1,ul,li{
+  padding: 0px;
+  margin: 0px;
+}
+body{
+  font-size: .32rem;
+}
+input{
+  border: none;
+  outline: none;
+}
+button{
+  outline: none;
+  border: none;
+}
+a{
+  text-decoration: none;
+}
+h1{
+  font-size: .32rem;
+  font-weight: normal;
+}
+ul{
+  list-style: none;
+}
+footer{
+   position: fixed;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+}
+footer p{
+  font-size: .24rem;
+  text-align: center;
+  color: rgba(0,0,0,0.50);
+}
+
+footer p a{
+  color: rgba(10,140,213,1);
+}

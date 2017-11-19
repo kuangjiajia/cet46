@@ -1,0 +1,10 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+div{
+  width: 7.5rem;
+  /*width: 100vw;*/
+  height: 500px;
+  background-color: red;
+}

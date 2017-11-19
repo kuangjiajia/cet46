@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>我的信息</title>
+  	<link rel="stylesheet" href="../stylesheets/aboutMe.css">
+  	<link rel="stylesheet" href="../stylesheets/base.css">
+    <script type="text/javascript" src="../javascripts/mobile.js"></script>
+  	<script type="text/javascript" src="../javascripts/ajx.js"></script>
+    <!-- <script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> -->
+    <!-- <script src="//wx.idsbllp.cn/wx-api/share.js"></script> -->
+    <!-- <script src="../javascripts/ajx.js"></script> -->
+  </head>
+  <body>
+	<header class="head">
+		<span class="icon"></span>
+		<span>准考证信息</span>
+		<button class="take-photo">拍照预存
+				<input id="selectimginp" type="file" capture="camera"/>				
+		</button>
+	</header>
+	<div class="content">
+		<div class="stu-name">
+			姓名 <span class="name">杨xx</span>
+		</div>
+		<div class="card-number">
+			证号 <span class="card">13123123123</span>
+		</div>
+	</div>
+	<h1 class="remind">
+		<span class="icon"></span>
+		<span>提醒</span>
+	</h1>
+	<div class="remind-content">
+		请认真核实准考证信息，以确保能够准确的推送到你的手机当中。
+		2017年12月底考试成绩查询将在2018年x月xx日上午x点可查，预约成功后，预约接口将在查询通道开放过后，进行重邮小帮手的微信同步推送到你的成绩单哦～
+	</div>
+	<div class="ps">
+		PS：拍照识别技术目前处于测试阶段，请认真检查一遍，以免出错哦～
+	</div>
+	<a class="submit" href="./modifySuccess.html">查询和修改预存信息</a>
+  <footer>
+  	<p>
+	   <a href="#">意见反馈@红岩网校</a>
+	</p>		
+  	<p>2017红岩网校工作站</p>
+  </footer>
+	<div id="prebox">
+		<img id="preimg" src=""/>
+		<button class="upPhoto">上传照片</button>
+	</div>
+	<!--裁剪图像层-->
+	<div id="cutbox"></div>
+		<!-- 裁剪图像数据上传层 -->
+		<input type="hidden" name="imgdata" id="imgdata" />
+		<!-- 用户选择图像层 -->
+	<div id="selectimgbox" style="display: block;">
+	</div>
+</body>
+</html>
+<!-- <script src="../javascripts/addConfig.js"></script> -->
+
+<script type="text/javascript" src="../javascripts/mkgo-crop.js" ></script>
+<script type="text/javascript" src="../javascripts/upLoad.js"></script>

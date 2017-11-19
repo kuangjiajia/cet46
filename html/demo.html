@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>mkgo-crop-HTML5图像裁剪</title>
+	<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<style>
+		*{margin: 0; padding: 0; border: 0;}
+	</style>
+</head>
+<body>
+	<!-- 裁剪预览层 -->
+	<div id="prebox" style=""><img id="preimg" src="" /></div>
+	<!--裁剪图像层-->
+    <div id="cutbox"></div>
+    	<!-- 裁剪图像数据上传层 -->
+    	<input type="hidden" name="imgdata" id="imgdata"  />
+    	<!-- 用户选择图像层 -->
+    <div id="selectimgbox" style="display: block;">
+    	<input id="selectimginp" type="file"  />
+    </div>
+</body>
+</html>
+
+<script type="text/javascript" src="../javascripts/mkgo-crop.js" ></script>
+<script type="text/javascript">
+	//图像裁剪层对象
+	var cutbox = document.getElementById('cutbox');
+	//图像预览层对象
+	var prebox = document.getElementById('prebox');
+	//图像预览对象
+	var preimg = document.getElementById('preimg');
+	//图像裁剪数据收集的input对象
+	var inp = document.getElementById('imgdata');
+	
+	//裁剪配置信息
+ 	var mkCrop = {
+		//图片地址
+		'imgsrc': './img/300001295750131174054755371_950.jpg',
+		//图片裁剪确定成功后回调函数
+		'back_fnc': back_fnc,
+		//裁剪左旋转按钮图片路径
+		'leftrimgurl': '../images/left-btn.png',
+		//裁剪右旋转按钮图片路径
+		'rightrimgurl': '../images/right-btn.png',
+		//裁剪完成确定按钮图片路径
+		'okrimgsrc': '../images/cut-btn.png',
+		//图片裁剪放置在那个dom节点对象里面
+		'cropparentdom': cutbox,
+		//图片预览dom节点对象
+		'preimgdom': preimg,
+		//图片裁剪数据信息收集的input对象，如果需要上传的话
+		'cropinputdom': inp
+	}
+ 	
+ 	//自定义选择图像层
+ 	var selectimgbox = document.getElementById('selectimgbox');
+ 	//自定义选择图片或者拍照信息
+ 	var selectimginp = document.getElementById('selectimginp');
+ 	selectimginp.setAttribute('accept', 'image/*');
+ 	//文件读取对象
+ 	var reader = new FileReader;
+ 	
+ 	selectimginp.onchange = function() {
+ 		selectimgbox.style.display = 'none';
+ 		reader.onload = function() {
+ 			mkCrop.imgsrc = this.result;
+ 			//初始化裁剪数据
+			initMkgoCrop(mkCrop);
+ 		}
+ 		reader.readAsDataURL(this.files[0]);	
+ 	}
+	
+	//确定裁剪（裁剪完成回调函数）
+	function back_fnc(res) {
+		//隐藏裁剪层
+		cutbox.style.display = 'none';
+		//显示预览层
+		prebox.style.display = 'show';
+    console.log(res);
+    
+		//上传裁剪的图像数据
+    // var uploadform = document.getElementById('uploadform');
+    
+    // uploadform.submit();
+    // uploadform.addEventListener("click",() => {
+    // })
+	}
+</script>

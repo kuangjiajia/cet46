@@ -1,0 +1,53 @@
+header.head {
+  width: 7.5rem;
+  height: 2.4rem;
+  margin: 0 auto;
+  background: url(../images/query.jpg);
+  background-size: 100% 100%;
+}
+.content {
+  width: 4rem;
+  margin: .6rem auto;
+}
+.content p {
+  line-height: .7rem;
+  font-size: .28rem;
+  color: #7EBDE1;
+}
+.content p span {
+  padding-left: .3rem;
+  color: rgba(0, 0, 0, 0.85);
+}
+.content .point {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.content .point .achievement {
+  width: 1rem;
+  line-height: .7rem;
+  font-size: .28rem;
+  color: #7EBDE1;
+}
+.content .point .point-list li {
+  line-height: .68rem;
+  font-size: .28rem;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.content .point .point-list li .point-type {
+  display: block;
+  width: 2rem;
+}
+.content .point .point-list li .point-value {
+  color: #FF7B2A;
+}
+.submit {
+  display: block;
+  width: 4rem;
+  height: .88rem;
+  margin: .6rem auto;
+  border-radius: .4rem;
+  background-color: #79c3f6;
+  font-size: .32rem;
+  color: #fafdff;
+}

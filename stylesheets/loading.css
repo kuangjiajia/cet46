@@ -1,0 +1,101 @@
+header.head {
+  margin: .7rem auto 0 auto;
+  width: 6.96rem;
+  display: flex;
+  flex-flow: row nowrap;
+}
+header.head .icon {
+  width: 0.08rem;
+  height: 0.38rem;
+  margin: 0 .1rem 0 0;
+  background-color: #9fd7fb;
+}
+.content {
+  width: 5.76rem;
+  margin: 0 auto;
+}
+.content div {
+  border-bottom: .02rem solid #d6eff1;
+  height: .8rem;
+  line-height: 1rem;
+  font-family: PingFangSC-Regular;
+  font-size: .28rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+.content div span {
+  padding-left: .2rem;
+  font-family: PingFangSC-Regular;
+  font-size: .3rem;
+  color: rgba(0, 0, 0, 0.85);
+}
+.remind {
+  margin: .7rem auto 0 auto;
+  width: 6.96rem;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.remind .icon {
+  width: 0.08rem;
+  height: 0.38rem;
+  margin: 0 .1rem 0 0;
+  background-color: #9fd7fb;
+}
+.remind span {
+  font-size: .32rem;
+}
+.remind-content {
+  width: 5.76rem;
+  height: 1.8rem;
+  margin: 0.3rem auto;
+  word-wrap: break-word;
+  font-family: PingFangSC-Regular;
+  font-size: .26rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+.remind-content p {
+  height: .22rem;
+}
+.ps {
+  width: 5.76rem;
+  height: 34px;
+  margin: 0 auto;
+  font-family: PingFangSC-Regular;
+  word-wrap: break-word;
+  font-size: .24rem;
+  color: #4EB2EA;
+}
+.submit {
+  display: block;
+  width: 5.62rem;
+  height: .88rem;
+  margin: .7rem auto;
+  border-radius: .4rem;
+  background-color: #79c3f6;
+  font-size: .32rem;
+  color: #fafdff;
+}
+.foots {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2.4rem;
+  overflow: hidden;
+}
+.foot {
+  display: block;
+  width: 6.67rem;
+  height: 0.8rem;
+  padding-top: 1.6rem;
+  margin: 0 auto;
+  background: url(../images/bottom.png) no-repeat;
+  background-size: 100% 100%;
+}
+.foot p {
+  font-size: .24rem;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+}
+.foot p a {
+  color: #0a8cd5;
+}

@@ -1,0 +1,64 @@
+.success-img {
+  position: relative;
+  width: 3.48rem;
+  height: 3.24rem;
+  margin: 28px auto  32px auto;
+  background: url(../images/search.png) bottom center / 100% 100% no-repeat;
+}
+.success-img .pao1 {
+  position: absolute;
+  top: .5rem;
+  left: 2.2rem;
+  display: none;
+  width: .14rem;
+  height: .14rem;
+  background: url(../images/pao1.png);
+  background-size: 100% 100%;
+}
+.success-img .pao2 {
+  position: absolute;
+  top: .3rem;
+  left: 2.5rem;
+  display: none;
+  width: .24rem;
+  height: .24rem;
+  background: url(../images/pao2.png);
+  background-size: 100% 100%;
+}
+.success-img .pao3 {
+  position: absolute;
+  top: -0.1rem;
+  left: 2.9rem;
+  display: none;
+  width: .6rem;
+  height: .6rem;
+  background: url(../images/pao3.png);
+  background-size: 100% 100%;
+}
+.succeed {
+  text-align: center;
+  font-family: PingFangSC-Regular;
+  font-size: .32rem;
+  color: #309EDC;
+}
+.success-remind {
+  width: 5.62rem;
+  height: .8rem;
+  margin: .3rem auto 10px auto;
+  word-wrap: break-word;
+  font-family: PingFangSC-Regular;
+  font-size: .28rem;
+  color: rgba(0, 0, 0, 0.5);
+}
+.submit {
+  display: block;
+  width: 5.62rem;
+  height: .88rem;
+  margin: .7rem auto;
+  outline: none;
+  border: none;
+  border-radius: .4rem;
+  background-color: #79c3f6;
+  font-size: .32rem;
+  color: #fafdff;
+}

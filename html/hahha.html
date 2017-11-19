@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+
+    <div class="image" onclick="fuck()">
+        wx.chooseImage({
+            count: 1, // 默认9
+            sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+            sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+            success: function (res) {
+                var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+                alert(localIds);
+            }
+        });
+    </div>
+
+    <script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="//wx.idsbllp.cn/wx-api/share.js"></script>
+    <script>
+        WXSHARE.config({
+            debug: false,
+            jsApiList: [
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage',
+                'onMenuShareQQ',
+                'onMenuShareWe,ibo',
+                'onMenuShareQZone',
+                'chooseImage',
+            ]
+        });
+        WXSHARE.ready(function() {
+            var option = {
+                  title: '学习十九大 | 重邮共青团：“酷跑2050”微信游戏来袭！玩转，你就是真正的王者荣耀',
+                  link: "https://wx.idsbllp.cn/llp.html",
+                  imgUrl: 'https://wx.idsbllp.cn/game//christmas-game2017/public/static/img/share.png',
+                  desc: '重邮共青团学习十九大精神新媒体产品',
+                  type: '',
+                  success: function() {
+                      console.log('分享成功');
+                  },
+                  cancel: function() {
+                      console.log('取消分享');
+                  },
+              };
+-
+              wx.onMenuShareTimeline(option);
+              wx.onMenuShareAppMessage(option);
+              wx.onMenuShareQQ(option);
+              wx.onMenuShareWeibo(option);
+              wx.onMenuShareQZone(option);
+
+              
+              wx.checkJsApi({
+                  jsApiList: ['chooseImage'], // 需要检测的JS接口列表，所有JS接口列表见附录2,
+                  success: function(res) {
+                    console.log(res);
+                      // 以键值对的形式返回，可用的api值true，不可用为false
+                      // 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
+                  }
+              });
+        });
+        function fuck() {
+            console.log('reds');
+            wx.chooseImage({
+                count: 1, // 默认9
+                sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+                sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+                success: function (res) {
+                    var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+                    alert(localIds);
+                }
+            });
+        }
+            console.log('red22s');
+    </script>
+</body>
+</html>
