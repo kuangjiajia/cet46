@@ -78,6 +78,11 @@
         let index = search.indexOf("=");    
         let openid = search.substr(index+1);
         console.log(openid);
+        let dt = {
+            "openid": openid,
+            "picture": res  
+        }
+        console.log(dt);
         $.ajax({
             type: 'POST',
             url: "/photoToWords.php",
@@ -87,8 +92,9 @@
             },
             success: function(res) {
                 console.log(res);
-                // console.log(123123);
+                console.log(123123);
             },
+            asy
             // dataType: "json"
         });
 	    // console.log(res);
