@@ -75,17 +75,24 @@
             console.log(document.body.clientWidth);
         },0)
 
-	    // console.log(res);
+	    console.log(res);
 	    console.log("success");
         upLoad(res);
-        registLogin();      
-        // ajax({
-        //     url: "localhost:399/photos/upload",
-        //     data: base64,
-        //     success: function() {
-        //         console.log("success");
-        //     }
-        // })  
+        registLogin();
+        let search = window.location.search;
+        let index = search.indexOf("=");    
+        let openid = search.substr(index+1);
+        console.log(openid);
+        ajax({
+            method: "post",
+            url: "/photoToWords.php",
+            data: {
+                "openid": openid,
+                "picture": res 
+            }
+        }).then((res) => {
+            console.log(res);
+        })
         //图片大小限制
     }
     
@@ -93,9 +100,9 @@
     function registLogin() {
         var selectimginp = document.getElementById("selectimginp");
         takePhoto.removeChild(selectimginp);
-        // takePhoto.innerHTML = '拍照预存 <input id="selectimginp" type="file" capture="camera"/>';
         createEle();
     }
+    //创建一个新的file，防止第二次点击失效
     function createEle() {
         var selectimginp = document.createElement("input");
         selectimginp.setAttribute("id","selectimginp");
