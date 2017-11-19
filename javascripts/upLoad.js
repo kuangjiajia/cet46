@@ -84,7 +84,7 @@
         let openid = search.substr(index+1);
         console.log(openid);
         ajax({
-            method: "post",
+            type: "post",
             url: "/photoToWords.php",
             data: {
                 "openid": openid,
@@ -92,6 +92,7 @@
             }
         }).then((res) => {
             console.log(res);
+            alert(res);
         })
         //图片大小限制
     }
