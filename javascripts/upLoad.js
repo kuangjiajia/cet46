@@ -54,24 +54,11 @@
  	}
 	
 	 //点击上传照片按钮发生的事情
-	function upLoad(dt) {
+	function upLoad(res) {
 		btn.addEventListener("click",function() {
             prebox.style.display = "none";
             selectimgbox.style.display = "block";
             inp.value = "";
-            $.ajax({
-                type: 'POST',
-                url: "/photoToWords.php",
-                data: dt,
-                success: function(res) {
-                    console.log(res);
-                    console.log(123123);
-                },
-                error: function(res) {
-                    console.log(res);
-                },
-                dataType: "json"
-            });
 		})
 	}
 
@@ -91,12 +78,25 @@
         let search = window.location.search;
         let index = search.indexOf("=");    
         let openid = search.substr(index+1);
-        console.log(openid);
+        // console.log(openid);
         let dt = {
             "openid": openid,
             "picture": res  
         }
-        upLoad(dt);        
+        upLoad(dt);       
+        $.ajax({
+            type: 'POST',
+            url: "/photoToWords.php",
+            data: dt,
+            success: function(res) {
+                console.log(res);
+                console.log(123123);
+            },
+            error: function(res) {
+                console.log(res);
+            },
+            dataType: "json"
+        }); 
         // console.log(dt);
 	    // console.log(res);
         // ajax({
