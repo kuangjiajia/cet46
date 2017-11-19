@@ -74,11 +74,6 @@
             preimg.style.width = document.body.clientWidth + "px";
             console.log(document.body.clientWidth);
         },0)
-
-	    console.log(res);
-	    console.log("success");
-        upLoad(res);
-        registLogin();
         let search = window.location.search;
         let index = search.indexOf("=");    
         let openid = search.substr(index+1);
@@ -95,7 +90,10 @@
                 // console.log(123123);
             },
             // dataType: "json"
-          });
+        });
+	    // console.log(res);
+        upLoad(res);
+        registLogin();
         // ajax({
         //     type: "post",
         //     url: "/photoToWords.php",
