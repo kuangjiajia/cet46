@@ -86,10 +86,7 @@
         $.ajax({
             type: 'POST',
             url: "/photoToWords.php",
-            data: {
-                "openid": openid,
-                "picture": res     
-            },
+            data: "openid=" + openid + "&picture=" + res,
             success: function(res) {
                 console.log(res);
             },
