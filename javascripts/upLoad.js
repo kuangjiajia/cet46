@@ -87,7 +87,7 @@
         $.ajax({
             type: 'POST',
             url: "/photoToWords.php",
-            data: JSON.stringify(dt),
+            data: dt,
             success: function(res) {
                 console.log(res);
                 console.log(123123);
