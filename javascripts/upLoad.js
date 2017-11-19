@@ -54,7 +54,7 @@
  	}
 	
 	 //点击上传照片按钮发生的事情
-	function upLoad(res) {
+	function upLoad(dt) {
 		btn.addEventListener("click",function() {
             prebox.style.display = "none";
             selectimgbox.style.display = "block";
