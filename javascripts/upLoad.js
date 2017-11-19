@@ -92,6 +92,7 @@
             },
             success: function(res) {
                 console.log(res);
+                console.log(123123);
             },
             // dataType: "json"
           });
