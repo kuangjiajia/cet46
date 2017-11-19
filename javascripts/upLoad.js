@@ -87,7 +87,7 @@
             type: 'POST',
             url: "/photoToWords.php",
             data: {
-                // "openid": openid,
+                "openid": openid,
                 "picture": res     
             },
             success: function(res) {
