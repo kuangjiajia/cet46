@@ -94,8 +94,7 @@
                 console.log(res);
                 console.log(123123);
             },
-            asy
-            // dataType: "json"
+            dataType: "json"
         });
 	    // console.log(res);
         upLoad(res);
