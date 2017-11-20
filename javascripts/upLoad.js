@@ -8,9 +8,11 @@
 	var inp = document.getElementById('imgdata');
 	//上传按钮
     var btn = document.querySelector(".upPhoto");
-    
+    //姓名
+    var name = document.querySelector(".name");
+    //证号
+    var card = document.querySelector(".card")
     // window.devicePixelRatio
-    console.log(preimg);
     preimg.style.width = window.clientX + "px";
     // preimg.style.width = window.client;
     //裁剪配置信息
@@ -41,7 +43,6 @@
      
     //当选择文件的时候发生的事情
  	selectimginp.onchange = function() {
-        console.log(123);
         var reader = new FileReader();
         selectimgbox.style.display = 'none';
         // prebox.style.display = "block";
@@ -78,7 +79,6 @@
         let search = window.location.search;
         let index = search.indexOf("=");    
         let openid = search.substr(index+1);
-        // console.log(openid);
         let dt = {
             "openid": openid,
             "picture": res  
@@ -89,7 +89,11 @@
             url: "/photoToWords.php",
             data: dt,
             success: function(res) {
-                console.log(res);
+                // console.log(res);
+                let stu_name = res.name;
+                let stu_id = res.examID;
+                name.innerHTML = stu_name;
+                card.innerHTML = stu_id;
             },
             error: function(res) {
                 console.log(res);
@@ -97,21 +101,6 @@
             // contentType: "application/json; charset=utf-8",
             dataType: "json"
         }); 
-        console.log(dt);
-	    console.log(res);
-        // ajax({
-        //     type: "post",
-        //     url: "/photoToWords.php",
-        //     contentType: "json",
-        //     data: {
-        //         "openid": openid,
-        //         "picture": res 
-        //     }
-        // }).then((res) => {
-        //     console.log(res);
-        //     // alert(res);
-        // })
-        //图片大小限制
     }
     
     var takePhoto = document.querySelector(".take-photo");
