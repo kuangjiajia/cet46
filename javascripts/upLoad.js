@@ -90,7 +90,7 @@
             data: dt,
             success: function(res) {
                 console.log(res);
-                let data = JSON.parse(res);
+                let data = res.data;
                 let stu_name = data.name;
                 let stu_id = data.examID;
                 name.innerHTML = stu_name;
