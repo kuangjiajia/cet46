@@ -593,7 +593,7 @@ function initMkgoCrop(mkCrop) {
 			
 			//生成最终上传的画布信息
 			var okObj = createCasObj();
-			setCasCss(okObj.cas, cw, ch, {});
+			setCasCss(okObj.cas, cw / window.devicePixelRatio, ch / window.devicePixelRatio, {});
 			//绘制图片[因为本画布和裁剪画布同一个大小和坐标]
 			okObj.c2d.drawImage(this, -cx, -cy);
 			
