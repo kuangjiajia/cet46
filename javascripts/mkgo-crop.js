@@ -208,14 +208,6 @@ function initMkgoCrop(mkCrop) {
 	//cssJson 画布的css信息，如{'position': 'absolute', 'top': '0px'}
 	function setCasCss(casObj, width, height, cssJson){
 		var ratio = window.devicePixelRatio || 1;
-
-		// if (width) {
-		// 	casObj.setAttribute('width', width);
-		// }
-		// if (height) {
-		// 	casObj.setAttribute('height', height);
-		// }
-
 		var oldWidth = width || window.clientWidth;
         var oldHeight = height || window.clientHeight;
 
@@ -601,7 +593,7 @@ function initMkgoCrop(mkCrop) {
 			
 			//生成最终上传的画布信息
 			var okObj = createCasObj();
-			setCasCss(okObj.cas, cw / window.devicePixelRatio, ch / window.devicePixelRatio, {});
+			setCasCss(okObj.cas, cw, ch, {});
 			//绘制图片[因为本画布和裁剪画布同一个大小和坐标]
 			okObj.c2d.drawImage(this, -cx, -cy);
 			
