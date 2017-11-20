@@ -17,8 +17,6 @@ function ajax(json) {
     str = str.substring(0,str.length -1 );
     if(type === "get"){
       url += "?" + str;
-    }else {
-      data = url;
     }
   }
 
@@ -48,7 +46,11 @@ function ajax(json) {
       setData();
       xhr.open(type,url,async);
       if(type === 'post') {
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
+        if(contentType === "json"){
+          xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");                    
+        }else{
+          xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");          
+        }
       }
       xhr.onreadystatechange = function() {
         if(xhr.readyState === 4) {
@@ -60,7 +62,7 @@ function ajax(json) {
           }
         }
       }
-      xhr.send(type === "get" ? null : data);
+      xhr.send(type === "get" ? null : JSON.stringify(data));
     }
   })
 }
