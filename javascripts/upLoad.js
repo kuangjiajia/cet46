@@ -9,9 +9,9 @@
 	//上传按钮
     var btn = document.querySelector(".upPhoto");
     //姓名
-    var name = document.querySelector(".name");
+    var stu_name = document.querySelector(".name");
     //证号
-    var card = document.querySelector(".card")
+    var stu_card = document.querySelector(".card");
     // window.devicePixelRatio
     preimg.style.width = window.clientX + "px";
     // preimg.style.width = window.client;
@@ -91,10 +91,10 @@
             success: function(res) {
                 console.log(res);
                 let data = res.data;
-                let stu_name = data.name;
-                let stu_id = data.examID;
-                name.innerHTML = stu_name;
-                card.innerHTML = stu_id;
+                let cet_name = data.name;
+                let cet_id = data.examID;
+                stu_name.innerHTML = stu_name;
+                stu_card.innerHTML = stu_id;
             },
             error: function(res) {
                 console.log(res);
