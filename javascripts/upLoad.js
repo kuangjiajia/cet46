@@ -89,9 +89,10 @@
             url: "/photoToWords.php",
             data: dt,
             success: function(res) {
-                // console.log(res);
-                let stu_name = res.name;
-                let stu_id = res.examID;
+                console.log(res);
+                let data = JSON.parse(res);
+                let stu_name = data.name;
+                let stu_id = data.examID;
                 name.innerHTML = stu_name;
                 card.innerHTML = stu_id;
             },
