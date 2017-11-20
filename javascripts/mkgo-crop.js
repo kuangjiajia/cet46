@@ -328,10 +328,10 @@ function initMkgoCrop(mkCrop) {
 			_this.tmp_csh = _this.initsh;
 			
 			//显示图像坐标信息
-			_this.initx = -_this.csw/window.devicePixelRatio;
+			_this.initx = -_this.csw;
 			_this.curx = _this.initx;
 			_this.tmp_curx = _this.initx;
-			_this.inity = -_this.csh/window.devicePixelRatio;
+			_this.inity = -_this.csh;
 			_this.cury = _this.inity;
 			_this.tmp_cury = _this.inity;
 			
