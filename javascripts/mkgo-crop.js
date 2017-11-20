@@ -123,8 +123,8 @@ function initMkgoCrop(mkCrop) {
 	fillRect(cCObj.c2d, {'fillStyle': '#000000', 'globalAlpha': 0.5}, 0, 0, screenW, screenH);
 	//获取裁剪画布的中心位置
 	var cxyobj = getCasCenter(cCObj.cas);
-	cCObj.cas.x = cxyobj.cx - cxyobj.zleng/window.devicePixelRatio;
-	cCObj.cas.y = cxyobj.cy - cxyobj.zleng/window.devicePixelRatio;
+	cCObj.cas.x = cxyobj.cx - cxyobj.zleng/2;
+	cCObj.cas.y = cxyobj.cy - cxyobj.zleng/2;
 	cCObj.cas.zleng = cxyobj.zleng;
 	//剪辑掉裁剪画布的中心位置
 	clearRect(cCObj.c2d, cCObj.cas.x, cCObj.cas.y, cxyobj.zleng, cxyobj.zleng);
