@@ -73,6 +73,7 @@
 		prebox.style.display = 'block';
         setTimeout(() => {
             preimg.style.width = document.body.clientWidth + "px";
+            prebox.style.margin = "0 auto";
             console.log(document.body.clientWidth);
         },0)
         registLogin();
