@@ -93,8 +93,8 @@
                 let data = res.data;
                 let cet_name = data.name;
                 let cet_id = data.examID;
-                stu_name.innerHTML = stu_name;
-                stu_card.innerHTML = stu_id;
+                stu_name.innerHTML = cet_name;
+                stu_card.innerHTML = cet_id;
             },
             error: function(res) {
                 console.log(res);
