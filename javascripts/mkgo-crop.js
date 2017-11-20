@@ -336,10 +336,10 @@ function initMkgoCrop(mkCrop) {
 			_this.tmp_csh = _this.initsh;
 			
 			//显示图像坐标信息
-			_this.initx = -_this.csw;
+			_this.initx = -_this.csw/window.devicePixelRatio;
 			_this.curx = _this.initx;
 			_this.tmp_curx = _this.initx;
-			_this.inity = -_this.csh;
+			_this.inity = -_this.csh/window.devicePixelRatio;
 			_this.cury = _this.inity;
 			_this.tmp_cury = _this.inity;
 			
@@ -601,7 +601,7 @@ function initMkgoCrop(mkCrop) {
 			
 			//生成最终上传的画布信息
 			var okObj = createCasObj();
-			setCasCss(okObj.cas, cw / 2, ch / 2, {});
+			setCasCss(okObj.cas, cw / window.devicePixelRatio, ch / window.devicePixelRatio, {});
 			//绘制图片[因为本画布和裁剪画布同一个大小和坐标]
 			okObj.c2d.drawImage(this, -cx, -cy);
 			
