@@ -46,7 +46,7 @@ function initMkgoCrop(mkCrop) {
 	//裁剪图像操作按钮
 	var btnObj = createButtonBox();
 	//旋转的角度
-	var cangle = 270;
+	var cangle = 90;
 
 	//定义一个图像对象
 	var CropImage = {
