@@ -413,6 +413,7 @@ function initMkgoCrop(mkCrop) {
 	//触摸事件处理函数
 	function touch (event) {
 		var event = event || window.event;
+		e.preventDefault();
 		switch(event.type) {
 			case "touchstart":
 				event.preventDefault();
