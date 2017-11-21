@@ -112,7 +112,7 @@ function initMkgoCrop(mkCrop) {
 	//平移坐标原点到画布中心
 	bCObj.c2d.translate(cxyobj.cx, cxyobj.cy);
 	//画出背景矩形
-	fillRect(bCObj.c2d, {'fillStyle': '#000000'}, bCObj.cas.x, bCObj.cas.y, screenW, screenH);
+	fillRect(bCObj.c2d, {'fillStyle': '#000000'}, bCObj.cas.x, bCObj.cas.y, screenW * window.devicePixelRatio, screenH * window.devicePixelRatio);
 
 	//设置裁剪画布的css
 	setCasCss(cCObj.cas, screenW, screenH,
@@ -120,7 +120,7 @@ function initMkgoCrop(mkCrop) {
 	//添加裁剪画布到body里面
 	appendChild(mkCrop.cropparentdom, cCObj.cas);
 	//画出背景矩形
-	fillRect(cCObj.c2d, {'fillStyle': '#000000', 'globalAlpha': 0.5}, 0, 0, screenW, screenH);
+	// fillRect(cCObj.c2d, {'fillStyle': '#000000', 'globalAlpha': 0.5}, 0, 0, screenW, screenH);
 	//获取裁剪画布的中心位置
 	var cxyobj = getCasCenter(cCObj.cas);
 	cCObj.cas.x = cxyobj.cx - cxyobj.zleng/2;
@@ -130,7 +130,7 @@ function initMkgoCrop(mkCrop) {
 	clearRect(cCObj.c2d, cCObj.cas.x, cCObj.cas.y, cxyobj.zleng, cxyobj.zleng);
 	//给裁剪掉的区域画一个边框
 	strokeRect(cCObj.c2d, {'strokeStyle': '#FFFFFF'},
-		1, 1, screenW * window.devicePixelRadio - 10, screenW * window.devicePixelRadio - 10);
+		0, 0, cxyobj.zleng, cxyobj.zleng);
 
 	//加载待裁剪的图像
 	CropImage.initImage(bCObj.c2d, mkCrop.imgsrc);
