@@ -79,7 +79,7 @@
         let search = window.location.search;
         let index = search.indexOf("=");    
         let openid = search.substr(index+1);
-        alert(openid);
+        // alert(openid);
         let dt = {
             "openid": openid,
             "picture": res  
