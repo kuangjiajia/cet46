@@ -130,7 +130,7 @@ function initMkgoCrop(mkCrop) {
 	clearRect(cCObj.c2d, cCObj.cas.x, cCObj.cas.y, cxyobj.zleng, cxyobj.zleng);
 	//给裁剪掉的区域画一个边框
 	strokeRect(cCObj.c2d, {'strokeStyle': '#FFFFFF'},
-		0, 0, cxyobj.zleng, cxyobj.zleng);
+		1, 1, screenW * window.devicePixelRadio - 10, screenW * window.devicePixelRadio - 10);
 
 	//加载待裁剪的图像
 	CropImage.initImage(bCObj.c2d, mkCrop.imgsrc);
