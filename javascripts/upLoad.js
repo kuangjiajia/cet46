@@ -42,18 +42,33 @@
  	//文件读取对象
 
     //当选择文件的时候发生的事情
- 	selectimginp.onchange = function() {
-        var reader = new FileReader();
-        selectimgbox.style.display = 'none';
-        // prebox.style.display = "block";
-        reader.onload = function() {
- 			mkCrop.imgsrc = this.result;
- 			//初始化裁剪数据
-			initMkgoCrop(mkCrop);
- 		}
- 		reader.readAsDataURL(this.files[0]);
- 	}
-
+    function selChange(dom) {
+        dom.onchange = function() {
+            // if()
+            let size = this.files[0].size / (1024 * 1024); //获取图片大小
+            let imgType = this.files[0].type.slice(this.files[0].type.indexOf("/") + 1); //获取图片的种类
+            //限制图片等格式
+            if (imgType === "png" || imgType === "jpeg" || imgType === "bmp" || imgType === "jpg") {
+                //限制图片大小
+                if(size > 4) {
+                    alert("上传的文件过大")
+                }else{
+                    var reader = new FileReader();
+                    selectimgbox.style.display = 'none';
+                    // prebox.style.display = "block";
+                    reader.onload = function() {
+                        mkCrop.imgsrc = this.result;
+                        //初始化裁剪数据
+                        initMkgoCrop(mkCrop);
+                    }
+                    reader.readAsDataURL(this.files[0]);
+                }
+            }else{
+                alert("图片的格式不对");
+            }
+        }
+    }
+    selChange(selectimginp);
 	 //点击上传照片按钮发生的事情
 	function upLoad(res) {
 		btn.addEventListener("click",function() {
@@ -66,20 +81,17 @@
 	//确定裁剪（裁剪完成回调函数）
 	function back_fnc(res) {
 		//隐藏裁剪层
-		// cutbox.style.display = 'none';
 		cutbox.innerHTML = '';
-
 		//显示预览层
 		prebox.style.display = 'block';
         setTimeout(() => {
             preimg.style.width = document.body.clientWidth + "px";
-            console.log(document.body.clientWidth);
         },0)
         registLogin();
         let search = window.location.search;
         let index = search.indexOf("=");
         let openid = search.substr(index+1);
-        // alert(openid);
+        let maxsize = 4*1024*1024;//2M 
         let dt = {
             "openid": openid,
             "picture": res
@@ -118,17 +130,19 @@
         selectimginp.setAttribute("type","file");
         selectimginp.setAttribute("capture","camera");
  	    selectimginp.setAttribute('accept', 'image/*');
-        selectimginp.onchange = function() {
-            var reader = new FileReader();
-            console.log(123);
-            selectimgbox.style.display = 'none';
-            // prebox.style.display = "block";
-            reader.onload = function() {
-                 mkCrop.imgsrc = this.result;
-                 //初始化裁剪数据
-                initMkgoCrop(mkCrop);
-             }
-            reader.readAsDataURL(this.files[0]);
-        }
+
+        // selectimginp.onchange = function() {
+        //     var reader = new FileReader();
+        //     console.log(123);
+        //     selectimgbox.style.display = 'none';
+        //     // prebox.style.display = "block";
+        //     reader.onload = function() {
+        //          mkCrop.imgsrc = this.result;
+        //          //初始化裁剪数据
+        //         initMkgoCrop(mkCrop);
+        //      }
+        //     reader.readAsDataURL(this.files[0]);
+        // }
+        selChange(selectimginp);
         takePhoto.appendChild(selectimginp);
     }
