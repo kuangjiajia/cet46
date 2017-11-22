@@ -16,7 +16,7 @@
     preimg.style.width = window.clientX + "px";
     // preimg.style.width = window.client;
     //裁剪配置信息
-    
+
  	var mkCrop = {
 		//图片裁剪确定成功后回调函数
 		'back_fnc': back_fnc,
@@ -33,14 +33,14 @@
 		//图片裁剪数据信息收集的input对象，如果需要上传的话
 		'cropinputdom': inp
 	}
- 	
+
  	//自定义选择图像层
  	var selectimgbox = document.getElementById('selectimgbox');
  	//自定义选择图片或者拍照信息
  	var selectimginp = document.getElementById('selectimginp');
  	selectimginp.setAttribute('accept', 'image/*');
  	//文件读取对象
-     
+
     //当选择文件的时候发生的事情
  	selectimginp.onchange = function() {
         var reader = new FileReader();
@@ -51,9 +51,9 @@
  			//初始化裁剪数据
 			initMkgoCrop(mkCrop);
  		}
- 		reader.readAsDataURL(this.files[0]);	
+ 		reader.readAsDataURL(this.files[0]);
  	}
-	
+
 	 //点击上传照片按钮发生的事情
 	function upLoad(res) {
 		btn.addEventListener("click",function() {
@@ -77,14 +77,14 @@
         },0)
         registLogin();
         let search = window.location.search;
-        let index = search.indexOf("=");    
+        let index = search.indexOf("=");
         let openid = search.substr(index+1);
         // alert(openid);
         let dt = {
             "openid": openid,
-            "picture": res  
+            "picture": res
         }
-        upLoad(dt);       
+        upLoad(dt);
         $.ajax({
             type: 'POST',
             url: "/photoToWords.php",
@@ -102,9 +102,9 @@
             },
             // contentType: "application/json; charset=utf-8",
             dataType: "json"
-        }); 
+        });
     }
-    
+
     var takePhoto = document.querySelector(".take-photo");
     function registLogin() {
         var selectimginp = document.getElementById("selectimginp");
@@ -128,7 +128,7 @@
                  //初始化裁剪数据
                 initMkgoCrop(mkCrop);
              }
-            reader.readAsDataURL(this.files[0]);	
+            reader.readAsDataURL(this.files[0]);
         }
         takePhoto.appendChild(selectimginp);
     }

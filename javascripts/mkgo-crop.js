@@ -46,7 +46,7 @@ function initMkgoCrop(mkCrop) {
 	//裁剪图像操作按钮
 	var btnObj = createButtonBox();
 	//旋转的角度
-	var cangle = 90;
+	var cangle = 0;
 
 	//定义一个图像对象
 	var CropImage = {
@@ -127,7 +127,7 @@ function initMkgoCrop(mkCrop) {
 	cCObj.cas.y = cxyobj.cy - cxyobj.zleng/2;
 	cCObj.cas.zleng = cxyobj.zleng;
 	//剪辑掉裁剪画布的中心位置
-	clearRect(cCObj.c2d, cCObj.cas.x, cCObj.cas.y, cxyobj.zleng, cxyobj.zleng);
+	clearRect(cCObj.c2d, cCObj.cas.x, cCObj.cas.y, cxyobj.zleng, cxyobj.zleng * 1.3);
 	//给裁剪掉的区域画一个边框
 	strokeRect(cCObj.c2d, {'strokeStyle': '#FFFFFF'},
 		0, 0, cxyobj.zleng, cxyobj.zleng);
@@ -306,6 +306,8 @@ function initMkgoCrop(mkCrop) {
 
 		//创建img对象
 		_this.image = document.createElement('img');
+		_this.image.style.width = screenW + "px";
+		_this.image.style.height = screenH + "px";
 		//_this.image = new Image();
 		//_this.image.crossOrigin = "Anonymous";
 		_this.image.setAttribute('src', _this.imgsrc);
@@ -525,10 +527,10 @@ function initMkgoCrop(mkCrop) {
 						CropImage.tmp_csw = CropImage.naturalW;
 					}
 					//图片不能缩小到小于初始化的大小
-					else if (CropImage.tmp_csw < CropImage.initsw) {
-						rd -= CropImage.tmp_csw - CropImage.initsw;
-						CropImage.tmp_csw = CropImage.initsw;
-					}
+					// else if (CropImage.tmp_csw < CropImage.initsw) {
+					// 	rd -= CropImage.tmp_csw - CropImage.initsw;
+					// 	CropImage.tmp_csw = CropImage.initsw;
+					// }
 					//等比例缩放，宽度为屏幕宽度，缩放图像的高度
 					CropImage.tmp_csh = scaleImage(CropImage.naturalW, CropImage.naturalH, CropImage.tmp_csw, '', 'width');
 					if (CropImage.tmp_csh > CropImage.naturalH) {
