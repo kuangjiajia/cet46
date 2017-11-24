@@ -48,7 +48,7 @@ header.head .take-photo input[type="file"] {
   font-size: .28rem;
   color: rgba(0, 0, 0, 0.6);
 }
-.content div span {
+.content div input {
   padding-left: .2rem;
   font-family: PingFangSC-Regular;
   font-size: .3rem;

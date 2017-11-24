@@ -14,9 +14,7 @@
     var stu_card = document.querySelector(".card");
     // window.devicePixelRatio
     preimg.style.width = window.clientX + "px";
-    // preimg.style.width = window.client;
     //裁剪配置信息
-
  	var mkCrop = {
 		//图片裁剪确定成功后回调函数
 		'back_fnc': back_fnc,
@@ -104,10 +102,11 @@
             success: function(res) {
                 console.log(res);
                 let data = res.data;
+                console.log(data);
                 let cet_name = data.name;
                 let cet_id = data.examID;
-                stu_name.innerHTML = cet_name;
-                stu_card.innerHTML = cet_id;
+                stu_name.value = cet_name;
+                stu_card.value = cet_id;
             },
             error: function(res) {
                 console.log(res);
@@ -131,18 +130,6 @@
         selectimginp.setAttribute("capture","camera");
  	    selectimginp.setAttribute('accept', 'image/*');
 
-        // selectimginp.onchange = function() {
-        //     var reader = new FileReader();
-        //     console.log(123);
-        //     selectimgbox.style.display = 'none';
-        //     // prebox.style.display = "block";
-        //     reader.onload = function() {
-        //          mkCrop.imgsrc = this.result;
-        //          //初始化裁剪数据
-        //         initMkgoCrop(mkCrop);
-        //      }
-        //     reader.readAsDataURL(this.files[0]);
-        // }
         selChange(selectimginp);
         takePhoto.appendChild(selectimginp);
     }
