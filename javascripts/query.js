@@ -6,7 +6,7 @@ let dt = {
     "openid": openid,
     "type": 1
 }
-alert(dt);
+alert(openid);
 $.ajax({
     type: 'POST',
     url: "/UserData.php",
