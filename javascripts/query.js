@@ -1,9 +1,15 @@
+let search = window.location.search;
+let index = search.indexOf("=");
+let openid = search.substr(index+1);
+let maxsize = 4*1024*1024;//2M 
+let dt = {
+    "openid": openid,
+    "type": 1
+}
 $.ajax({
     type: 'POST',
     url: "/UserData.php",
-    data: {
-        "type": 1
-    },
+    data:dt,
     success: function(res) {
         // console.log(res);
         // let data = res.data;
@@ -13,6 +19,7 @@ $.ajax({
         // stu_name.value = cet_name;
         // stu_card.value = cet_id;
         console.log(res);
+        alert(res);
     },
     error: function(res) {
         console.log(res);
