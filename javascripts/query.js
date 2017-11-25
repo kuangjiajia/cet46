@@ -19,7 +19,7 @@ $.ajax({
         // stu_name.value = cet_name;
         // stu_card.value = cet_id;
         console.log(res);
-        alert(JSON.stringify(res) + openid);
+        alert(openid);
     },
     error: function(res) {
         console.log(res);
