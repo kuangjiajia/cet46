@@ -13,6 +13,8 @@
     //证号
     var stu_card = document.querySelector(".card");
     // window.devicePixelRatio
+    //submit提交
+    var sub = document.querySelector(".submit");
     preimg.style.width = window.clientX + "px";
     //裁剪配置信息
  	var mkCrop = {
@@ -133,3 +135,25 @@
         selChange(selectimginp);
         takePhoto.appendChild(selectimginp);
     }
+
+    submit.addEventListener("click",() => {
+        var name = stu_name.value;
+        var id = stu_card.value;
+        var dt = {
+            "name": name,
+            "id": id
+        }
+        $.ajax({
+            type: 'POST',
+            url: "/UserData.php",
+            data: dt,
+            success: function(res) {
+                console.log(res);
+            },
+            error: function(res) {
+                console.log(res);
+            },
+            // contentType: "application/json; charset=utf-8",
+            dataType: "json"
+        });
+    })
