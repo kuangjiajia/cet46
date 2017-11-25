@@ -6,8 +6,8 @@ let dt = {
     "openid": openid,
     "type": 1
 }
-alert(JOSN.stringify(search));
-// alert(openid);
+// alert(JOSN.stringify(search));
+alert(search);
 // $.ajax({
 //     type: 'POST',
 //     url: "/UserData.php",
