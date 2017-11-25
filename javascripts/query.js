@@ -6,6 +6,7 @@ let dt = {
     "openid": openid,
     "type": 1
 }
+alert(dt);
 $.ajax({
     type: 'POST',
     url: "/UserData.php",
@@ -19,7 +20,7 @@ $.ajax({
         // stu_name.value = cet_name;
         // stu_card.value = cet_id;
         console.log(res);
-        alert(openid);
+        // alert(openid);
     },
     error: function(res) {
         console.log(res);
