@@ -136,7 +136,7 @@
         takePhoto.appendChild(selectimginp);
     }
 
-    submit.addEventListener("click",() => {
+    sub.addEventListener("click",() => {
         var name = stu_name.value;
         var id = stu_card.value;
         var dt = {
