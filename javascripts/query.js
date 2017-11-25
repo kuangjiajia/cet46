@@ -1,7 +1,9 @@
 $.ajax({
     type: 'POST',
     url: "/UserData.php",
-    // data: dt,
+    data: {
+        "type": 1
+    },
     success: function(res) {
         // console.log(res);
         // let data = res.data;
