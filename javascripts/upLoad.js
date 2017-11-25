@@ -141,7 +141,8 @@
         var id = stu_card.value;
         var dt = {
             "name": name,
-            "id": id
+            "id": id,
+            "type": 1
         }
         $.ajax({
             type: 'POST',
