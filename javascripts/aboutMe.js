@@ -1,6 +1,8 @@
 
 let nowUrl = decodeURIComponent(window.location.search);
-function param(json) {
+function param(url) {
+    const index = url.indexOf("?");
+    let str = url.slice(index+1);
     let json = str.split("&");
     let obj = {};
     for(var i = 0 ; i < json.length; i++){
