@@ -150,8 +150,6 @@
 
     sub.addEventListener("click",() => {
         //出现过度动画
-        load.style.display = "block";
-
         let openid = getOpenId();
         var name = stu_name.value;
         var id = stu_card.value;
@@ -169,7 +167,6 @@
             url: "/UserData.php",
             data: dt,
             success: function(res) {
-                load.style.display = "none";
                 console.log(res);
                 alert(JSON.stringify(res))
                 window.location.href = "./depositSuccess.html";
