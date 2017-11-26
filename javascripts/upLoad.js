@@ -187,7 +187,7 @@
             },
             error: function(res) {
                 console.log(res);
-                alert(res);
+                alert(JSON.stringify(res));
             },
             dataType: "json"
         });
