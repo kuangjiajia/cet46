@@ -154,7 +154,7 @@
         var name = stu_name.value;
         var id = stu_card.value;
         type = xxx ? 2 : 3;
-        alert(type);
+        // alert(type);
         toUrl = xxx ? "./modifySuccess.html" :"./depositSuccess.html";
         var dt = {
             "name": name,
@@ -162,6 +162,7 @@
             "openid": openid,
             "type": type
         }
+        alert(dt);
         // alert(openid);
         // alert(JSON.stringify(dt));
         $.ajax({
