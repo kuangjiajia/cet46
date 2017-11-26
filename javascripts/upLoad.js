@@ -160,21 +160,21 @@
             "openid": openid,
             "type": 3
         }
-        alert(openid);
-        // $.ajax({
-        //     type: 'POST',
-        //     url: "/test.php",
-        //     data: dt,
-        //     success: function(res) {
-        //         load.style.display = "none";
-        //         console.log(res);
-        //         alert(JSON.stringify(res))
-        //     },
-        //     error: function(res) {
-        //         console.log(res);
-        //     },
-        //     dataType: "json"
-        // });
+        // alert(openid);
+        $.ajax({
+            type: 'POST',
+            url: "/UserData.php",
+            data: dt,
+            success: function(res) {
+                load.style.display = "none";
+                console.log(res);
+                alert(JSON.stringify(res))
+            },
+            error: function(res) {
+                console.log(res);
+            },
+            dataType: "json"
+        });
     })
 
 
