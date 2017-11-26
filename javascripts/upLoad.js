@@ -182,10 +182,12 @@
             url: "/UserData.php",
             data: dt,
             success: function(res) {
+                alert('mmp');
                 window.location.href = toUrl;
             },
             error: function(res) {
                 console.log(res);
+                alert(res);
             },
             dataType: "json"
         });
