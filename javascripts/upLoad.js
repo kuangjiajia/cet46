@@ -154,7 +154,7 @@
         var name = stu_name.value;
         var id = stu_card.value;
         type = xxx ? 2 : 3;
-        toUrl = xxx ? "modifySuccess" :"./depositSuccess.html";
+        toUrl = xxx ? "./modifySuccess.html" :"./depositSuccess.html";
         var dt = {
             "name": name,
             "id": id,
@@ -170,7 +170,7 @@
             success: function(res) {
                 console.log(res);
                 alert(JSON.stringify(res))
-                window.location.href = "./depositSuccess.html";
+                window.location.href = toUrl;
             },
             error: function(res) {
                 console.log(res);
