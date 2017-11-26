@@ -1,5 +1,5 @@
 
-let nowUrl = window.location.search;
+let nowUrl =  decodeURI(window.location.search);
 function param(url) {
     const index = url.indexOf("?");
     let str = url.slice(index+1);
