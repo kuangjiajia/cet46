@@ -170,6 +170,7 @@
                 load.style.display = "none";
                 console.log(res);
                 alert(JSON.stringify(res))
+                window.location.href = "./depositSuccess.html";
             },
             error: function(res) {
                 console.log(res);
