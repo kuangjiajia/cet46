@@ -38,3 +38,41 @@ footer p{
 footer p a{
   color: rgba(10,140,213,1);
 }
+.load {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 3;
+  width: 100vw;
+  height: 55vh;
+  padding-top: 45vh;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.load div {
+  width: 10vw;
+  height: 10vw;
+  background-color: #67CF22;
+  border-radius: 100%;
+  display: inline-block;
+  animation: bouncedelay 1.4s infinite ease-in-out;
+  animation-fill-mode: both;
+}
+.load div.bounce1 {
+  animation-delay: -0.32s;
+}
+.load div.bounce2 {
+  animation-delay: -0.16s;
+}
+@keyframes bouncedelay {
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}

@@ -13,9 +13,9 @@
     //证号
     var stu_card = document.querySelector(".card");
     // window.devicePixelRatio
+    var load = document.querySelector(".load");
     //submit提交
     var sub = document.querySelector(".submit");
-    preimg.style.width = window.clientX + "px";
     //裁剪配置信息
  	var mkCrop = {
 		//图片裁剪确定成功后回调函数
@@ -41,6 +41,7 @@
  	selectimginp.setAttribute('accept', 'image/*');
  	//文件读取对象
 
+     
     //当选择文件的时候发生的事情
     function selChange(dom) {
         dom.onchange = function() {
@@ -70,8 +71,26 @@
     }
     selChange(selectimginp);
 	 //点击上传照片按钮发生的事情
-	function upLoad(res) {
+	function upLoad(dt) {
 		btn.addEventListener("click",function() {
+            load.style.display = "block";
+            $.ajax({
+                type: 'POST',
+                url: "/photoToWords.php",
+                data: dt,
+                success: function() {
+                    load.style.display = "none";
+                    let data = res.data;
+                    let cet_name = data.name;
+                    let cet_id = data.examID;
+                    stu_name.value = cet_name;
+                    stu_card.value = cet_id;
+                },
+                error: function(res) {
+                    console.log(res);
+                },
+                dataType: "json"
+            });
             prebox.style.display = "none";
             selectimgbox.style.display = "block";
             inp.value = "";
@@ -88,6 +107,7 @@
             preimg.style.width = document.body.clientWidth + "px";
         },0)
         registLogin();
+        //获取openid
         let search = window.location.search;
         let index = search.indexOf("=");
         let openid = search.substr(index+1);
@@ -97,25 +117,6 @@
             "picture": res
         }
         upLoad(dt);
-        $.ajax({
-            type: 'POST',
-            url: "/photoToWords.php",
-            data: dt,
-            success: function(res) {
-                console.log(res);
-                let data = res.data;
-                console.log(data);
-                let cet_name = data.name;
-                let cet_id = data.examID;
-                stu_name.value = cet_name;
-                stu_card.value = cet_id;
-            },
-            error: function(res) {
-                console.log(res);
-            },
-            // contentType: "application/json; charset=utf-8",
-            dataType: "json"
-        });
     }
 
     var takePhoto = document.querySelector(".take-photo");
@@ -124,7 +125,7 @@
         takePhoto.removeChild(selectimginp);
         createEle();
     }
-    //创建一个新的file，防止第二次点击失效
+    //创建一个新的file，防止第二次ajax点击失效
     function createEle() {
         var selectimginp = document.createElement("input");
         selectimginp.setAttribute("id","selectimginp");
@@ -137,6 +138,8 @@
     }
 
     sub.addEventListener("click",() => {
+        //出现过度动画
+        load.style.display = "block";
         var name = stu_name.value;
         var id = stu_card.value;
         var dt = {
@@ -149,6 +152,7 @@
             url: "/UserData.php",
             data: dt,
             success: function(res) {
+                load.style.display = "none";
                 console.log(res);
                 alert(JSON.stringify(res))
             },

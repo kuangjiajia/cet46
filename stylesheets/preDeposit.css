@@ -29,7 +29,6 @@ header.head {
   position: relative;
   width: 1.6rem;
   height: .6rem;
-  line-height: .5rem;
   margin-left: 3.58rem;
   border: none;
   outline: none;
@@ -104,7 +103,9 @@ header.head {
   display: block;
   width: 5.62rem;
   height: .88rem;
+  line-height: .88rem;
   margin: .6rem auto;
+  text-align: center;
   border-radius: .4rem;
   background-color: #79c3f6;
   font-size: .32rem;
@@ -130,4 +131,42 @@ header.head {
   background-color: #79c3f6;
   font-size: .32rem;
   color: #fafdff;
+}
+.load {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 3;
+  width: 100vw;
+  height: 55vh;
+  padding-top: 45vh;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.load div {
+  width: 10vw;
+  height: 10vw;
+  background-color: #67CF22;
+  border-radius: 100%;
+  display: inline-block;
+  animation: bouncedelay 1.4s infinite ease-in-out;
+  animation-fill-mode: both;
+}
+.load div.bounce1 {
+  animation-delay: -0.32s;
+}
+.load div.bounce2 {
+  animation-delay: -0.16s;
+}
+@keyframes bouncedelay {
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
 }
