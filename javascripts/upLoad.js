@@ -71,14 +71,14 @@
     }
     selChange(selectimginp);
 	 //点击上传照片按钮发生的事情
-	function upLoad(dt) {
+	function upLoad(dt,res) {
 		btn.addEventListener("click",function() {
             load.style.display = "block";
             $.ajax({
                 type: 'POST',
                 url: "/photoToWords.php",
                 data: dt,
-                success: function() {
+                success: function(res) {
                     load.style.display = "none";
                     let data = res.data;
                     let cet_name = data.name;
@@ -114,7 +114,7 @@
             "openid": openid,
             "picture": res
         }
-        upLoad(dt);
+        upLoad(dt,res);
     }
 
     function getOpenId() {
