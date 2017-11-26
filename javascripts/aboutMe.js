@@ -1,9 +1,6 @@
 
 let nowUrl = decodeURIComponent(window.location.search);
-alert(nowUrl);
-function param(url) {
-    const index = url.indexOf("?");
-    let str = url.slice(index+1);
+function param(json) {
     let json = str.split("&");
     let obj = {};
     for(var i = 0 ; i < json.length; i++){
@@ -13,7 +10,7 @@ function param(url) {
 }
 
 let message = param(nowUrl);
-// alert(JSON.stringify(message));
+alert(JSON.stringify(message));
 
 var stu_name = document.querySelector(".name");
 //证号
