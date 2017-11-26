@@ -154,6 +154,7 @@
         var name = stu_name.value;
         var id = stu_card.value;
         type = xxx ? 2 : 3;
+        toUrl = xxx ? "modifySuccess" :"./depositSuccess.html";
         var dt = {
             "name": name,
             "id": id,
