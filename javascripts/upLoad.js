@@ -162,7 +162,7 @@
         }
         $.ajax({
             type: 'POST',
-            url: "/UserData.php",
+            url: "/test.php",
             data: dt,
             success: function(res) {
                 load.style.display = "none";
