@@ -12,7 +12,7 @@ function param(url) {
 }
 
 let message = param(nowUrl);
-alert(JSON.stringify(message));
+// alert(JSON.stringify(message));
 
 var stu_name = document.querySelector(".name");
 //证号
