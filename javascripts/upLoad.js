@@ -41,7 +41,7 @@
  	selectimginp.setAttribute('accept', 'image/*');
  	//文件读取对象
 
-     
+
     //当选择文件的时候发生的事情
     function selChange(dom) {
         dom.onchange = function() {
@@ -108,15 +108,20 @@
         },0)
         registLogin();
         //获取openid
-        let search = window.location.search;
-        let index = search.indexOf("=");
-        let openid = search.substr(index+1);
+        let openid = getOpenId();
         let maxsize = 4*1024*1024;//2M 
         let dt = {
             "openid": openid,
             "picture": res
         }
         upLoad(dt);
+    }
+
+    function getOpenId() {
+        let search = window.location.search;
+        let index = search.indexOf("=");
+        let openid = search.substr(index+1);
+        return openid;
     }
 
     var takePhoto = document.querySelector(".take-photo");
@@ -140,12 +145,15 @@
     sub.addEventListener("click",() => {
         //出现过度动画
         load.style.display = "block";
+
+        let openid = getOpenId();
         var name = stu_name.value;
         var id = stu_card.value;
         var dt = {
             "name": name,
             "id": id,
-            "type": 1
+            "openid": openid,
+            "type": 3
         }
         $.ajax({
             type: 'POST',
@@ -162,3 +170,16 @@
             dataType: "json"
         });
     })
+
+
+
+function param(url) {
+    const index = url.indexOf("?");
+    let str = url.slice(index+1);
+    let json = str.split("&");
+    let obj = {};
+    for(var i = 0 ; i < json.length; i++){
+        obj[json[i].slice(0,json[i].indexOf("="))] = json[i].slice(json[i].indexOf("=")+1);
+    }
+    return obj;
+}
