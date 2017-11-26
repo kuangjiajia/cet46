@@ -162,7 +162,7 @@
             "openid": openid,
             "type": type
         }
-        alert(dt);
+        alert(JSON.stringify(dt));
         // alert(openid);
         // alert(JSON.stringify(dt));
         $.ajax({
@@ -170,8 +170,6 @@
             url: "/UserData.php",
             data: dt,
             success: function(res) {
-                console.log(res);
-                alert(JSON.stringify(res))
                 window.location.href = toUrl;
             },
             error: function(res) {
