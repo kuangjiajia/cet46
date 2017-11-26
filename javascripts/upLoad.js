@@ -130,7 +130,8 @@
         return openid;
     }
 
-    function getSecondOpenId(url) {
+    function getSecondOpenId() {
+        let url = decodeURIComponent(window.location.search);
         const index = url.indexOf("?");
         let str = url.slice(index+1);
         let json = str.split("&");
@@ -163,10 +164,10 @@
         //出现过度动画
         var name = stu_name.value;
         var id = stu_card.value;
-        type = xxx ? 2 : 3;
+        var type = xxx ? 2 : 3;
         // alert(type);
-        toUrl = xxx ? "./modifySuccess.html" :"./depositSuccess.html";
-        openid = xxx ? getSecondOpenId() : getOpenId();
+        var toUrl = xxx ? "./modifySuccess.html" :"./depositSuccess.html";
+        var openid = xxx ? getSecondOpenId() : getOpenId();
         var dt = {
             "name": name,
             "id": id,
