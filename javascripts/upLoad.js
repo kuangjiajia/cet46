@@ -79,6 +79,7 @@
                 url: "/photoToWords.php",
                 data: dt,
                 success: function(res) {
+                    console.log(res);
                     load.style.display = "none";
                     let data = res.data;
                     let cet_name = data.name;
