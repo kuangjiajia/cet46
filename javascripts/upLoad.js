@@ -79,13 +79,17 @@
                 url: "/photoToWords.php",
                 data: dt,
                 success: function(res) {
-                    console.log(res);
                     load.style.display = "none";
-                    let data = res.data;
-                    let cet_name = data.name;
-                    let cet_id = data.examID;
-                    stu_name.value = cet_name;
-                    stu_card.value = cet_id;
+                    if(res.status === 200){
+                        console.log(res);
+                        let data = res.data;
+                        let cet_name = data.name;
+                        let cet_id = data.examID;
+                        stu_name.value = cet_name;
+                        stu_card.value = cet_id;
+                    }else{
+                        alert("mdzz");
+                    }
                 },
                 error: function(res) {
                     console.log(res);
@@ -153,7 +157,7 @@
         var dt = {
             "name": name,
             "id": id,
-            "openid": openid,
+            // "openid": openid,
             "type": 3
         }
         $.ajax({
