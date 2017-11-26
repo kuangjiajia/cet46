@@ -130,6 +130,17 @@
         return openid;
     }
 
+    function getSecondOpenId(url) {
+        const index = url.indexOf("?");
+        let str = url.slice(index+1);
+        let json = str.split("&");
+        let obj = {};
+        for(var i = 0 ; i < json.length; i++){
+            obj[json[i].slice(0,json[i].indexOf("="))] = json[i].slice(json[i].indexOf("=")+1);
+        }
+        return obj["openid"];
+    }
+
     var takePhoto = document.querySelector(".take-photo");
     function registLogin() {
         var selectimginp = document.getElementById("selectimginp");
@@ -150,12 +161,12 @@
 
     sub.addEventListener("click",() => {
         //出现过度动画
-        let openid = getOpenId();
         var name = stu_name.value;
         var id = stu_card.value;
         type = xxx ? 2 : 3;
         // alert(type);
         toUrl = xxx ? "./modifySuccess.html" :"./depositSuccess.html";
+        openid = xxx ? getSecondOpenId() : getOpenId();
         var dt = {
             "name": name,
             "id": id,
