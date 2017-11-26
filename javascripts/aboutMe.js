@@ -12,7 +12,7 @@ function param(url) {
 }
 
 let message = param(nowUrl);
-alert(message);
+alert(JSON.stringify(message));
 
 // $.ajax({
 //     type: 'GET',
