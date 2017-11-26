@@ -183,7 +183,7 @@
             data: dt,
             success: function(res) {
                 alert('mmp');
-                window.location.href = toUrl;
+                // window.location.href = toUrl;
             },
             error: function(res) {
                 console.log(res);
