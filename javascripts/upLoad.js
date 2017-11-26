@@ -17,6 +17,7 @@
     //submit提交
     var sub = document.querySelector(".submit");
     //裁剪配置信息
+    var xxx = document.querySelector(".head .icon");
  	var mkCrop = {
 		//图片裁剪确定成功后回调函数
 		'back_fnc': back_fnc,
@@ -154,11 +155,12 @@
         let openid = getOpenId();
         var name = stu_name.value;
         var id = stu_card.value;
+        type = xxx ? 2 : 3;
         var dt = {
             "name": name,
             "id": id,
             "openid": openid,
-            "type": 3
+            "type": type
         }
         // alert(openid);
         // alert(JSON.stringify(dt));
@@ -180,14 +182,3 @@
     })
 
 
-
-function param(url) {
-    const index = url.indexOf("?");
-    let str = url.slice(index+1);
-    let json = str.split("&");
-    let obj = {};
-    for(var i = 0 ; i < json.length; i++){
-        obj[json[i].slice(0,json[i].indexOf("="))] = json[i].slice(json[i].indexOf("=")+1);
-    }
-    return obj;
-}

@@ -21,16 +21,3 @@ let cet_name = message.name;
 let cet_id = message.examID;
 stu_name.value = cet_name;
 stu_card.value = cet_id;
-
-// $.ajax({
-//     type: 'GET',
-//     url: "/UserData.php",
-//     data: dt,
-//     success: function(res) {
-        
-//     },
-//     error: function(res) {
-//         console.log(res);
-//     },
-//     dataType: "json"
-// });
