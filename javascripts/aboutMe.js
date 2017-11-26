@@ -14,13 +14,13 @@ function param(url) {
 let message = param(nowUrl);
 alert(JSON.stringify(message));
 
-// var stu_name = document.querySelector(".name");
-// //证号
-// var stu_card = document.querySelector(".card");
-// let cet_name = data.name;
-// let cet_id = data.examID;
-// stu_name.value = cet_name;
-// stu_card.value = cet_id;
+var stu_name = document.querySelector(".name");
+//证号
+var stu_card = document.querySelector(".card");
+let cet_name = message.name;
+let cet_id = message.examID;
+stu_name.value = cet_name;
+stu_card.value = cet_id;
 
 // $.ajax({
 //     type: 'GET',
