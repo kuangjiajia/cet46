@@ -157,7 +157,7 @@
         var dt = {
             "name": name,
             "id": id,
-            // "openid": openid,
+            "openid": openid,
             "type": 3
         }
         $.ajax({
