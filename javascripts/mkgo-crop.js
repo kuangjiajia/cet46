@@ -586,6 +586,8 @@ function initMkgoCrop(mkCrop) {
 			okObj.c2d.drawImage(this, 0, 0);
 
 			//ajax发送数据值后台
+			var compress = okObj.cas.toDataURL('image/png',0.3);
+			//显示的图片数据
 			var imgdata = okObj.cas.toDataURL('image/png');
 			//保持裁剪数据
 			mkCrop.cropinputdom.setAttribute('value', imgdata);
@@ -594,7 +596,7 @@ function initMkgoCrop(mkCrop) {
 
 			//调用回调处理函数
 			if (typeof mkCrop.back_fnc == 'function') {
-				mkCrop.back_fnc(imgdata);
+				mkCrop.back_fnc(compress);
 			}
 		}
 

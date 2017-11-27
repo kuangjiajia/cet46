@@ -174,9 +174,7 @@
             "openid": openid,
             "type": type
         }
-        // alert(JSON.stringify(dt));
-        // alert(openid);
-        // alert(JSON.stringify(dt));
+        
         $.ajax({
             type: 'POST',
             url: "/UserData.php",
