@@ -72,7 +72,6 @@
     }
     selChange(selectimginp);
      //点击上传照片按钮发生的事情
-     alert(2313213);
 	function upLoad(dt,res) {
 		btn.addEventListener("click",function() {
             load.style.display = "block";
