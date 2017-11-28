@@ -96,6 +96,7 @@
                 },
                 error: function(res) {
                     console.log(res);
+                    alert(123);
                 },
                 dataType: "json"
             });
