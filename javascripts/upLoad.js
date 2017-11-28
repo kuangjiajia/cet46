@@ -81,8 +81,9 @@
                 data: dt,
                 success: function(res) {
                     load.style.display = "none";
-                    alert(JSON.stringify(res));
+                    // alert(JSON.stringify(res));
                     if(res.status === 200){
+                        alert(123);
                         console.log(res);
                         let data = res.data;
                         let cet_name = data.name;
