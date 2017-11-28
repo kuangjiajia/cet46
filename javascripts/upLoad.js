@@ -74,6 +74,7 @@
      //点击上传照片按钮发生的事情
 	function upLoad(dt,res) {
 		btn.addEventListener("click",function() {
+            alert(123);
             load.style.display = "block";
             $.ajax({
                 type: 'POST',
@@ -85,10 +86,14 @@
                         alert(123);
                         console.log(res);
                         let data = res.data;
-                        let cet_name = data.name;
-                        let cet_id = data.examID;
-                        stu_name.value = cet_name;
-                        stu_card.value = cet_id;
+                        if(data.name && data.examID){
+                            let cet_name = data.name;
+                            let cet_id = data.examID;
+                            stu_name.value = cet_name;
+                            stu_card.value = cet_id;
+                        }else{
+                            alert("识别失败");
+                        }
                         load.style.display = "none";
                     }else{
                         alert("识别失败");
