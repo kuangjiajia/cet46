@@ -53,7 +53,7 @@
             //限制图片等格式
             if (imgType === "png" || imgType === "jpeg" || imgType === "bmp" || imgType === "jpg") {
                 //限制图片大小
-                if(size > 4) {
+                if(size > 8) {
                     alert("上传的文件过大")
                 }else{
                     var reader = new FileReader();
@@ -110,6 +110,7 @@
 
 	//确定裁剪（裁剪完成回调函数）
 	function back_fnc(res) {
+
 		//隐藏裁剪层
 		cutbox.innerHTML = '';
 		//显示预览层
