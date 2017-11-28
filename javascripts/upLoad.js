@@ -48,12 +48,11 @@
         dom.onchange = function() {
             // if()
             let size = this.files[0].size / (1024 * 1024); //获取图片大小
-            alert(size);
             let imgType = this.files[0].type.slice(this.files[0].type.indexOf("/") + 1); //获取图片的种类
             //限制图片等格式
             if (imgType === "png" || imgType === "jpeg" || imgType === "bmp" || imgType === "jpg") {
                 //限制图片大小
-                if(size > 8) {
+                if(size > 4) {
                     alert("上传的文件过大")
                 }else{
                     var reader = new FileReader();
@@ -84,18 +83,14 @@
                     load.style.display = "none";
                     alert(JSON.stringify(res));
                     if(res.status === 200){
-                        if(res.data.name && res.data.examID) {
-                            console.log(res);
-                            let data = res.data;
-                            let cet_name = data.name;
-                            let cet_id = data.examID;
-                            stu_name.value = cet_name;
-                            stu_card.value = cet_id;
-                        }else {
-                            alert("上传的相片有问题");
-                        }
+                        console.log(res);
+                        let data = res.data;
+                        let cet_name = data.name;
+                        let cet_id = data.examID;
+                        stu_name.value = cet_name;
+                        stu_card.value = cet_id;
                     }else{
-                        alert("上传失败");
+                        alert("mdzz");
                     }
                 },
                 error: function(res) {
@@ -111,7 +106,6 @@
 
 	//确定裁剪（裁剪完成回调函数）
 	function back_fnc(res) {
-
 		//隐藏裁剪层
 		cutbox.innerHTML = '';
 		//显示预览层
