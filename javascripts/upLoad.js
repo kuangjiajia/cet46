@@ -82,6 +82,7 @@
                 data: dt,
                 success: function(res) {
                     load.style.display = "none";
+                    alert(JSON.stringify(res));
                     if(res.status === 200){
                         if(res.data.name && res.data.examID) {
                             console.log(res);
