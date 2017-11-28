@@ -82,14 +82,18 @@
                 success: function(res) {
                     load.style.display = "none";
                     if(res.status === 200){
-                        console.log(res);
-                        let data = res.data;
-                        let cet_name = data.name;
-                        let cet_id = data.examID;
-                        stu_name.value = cet_name;
-                        stu_card.value = cet_id;
+                        if(res.data.name && res.data.examID) {
+                            console.log(res);
+                            let data = res.data;
+                            let cet_name = data.name;
+                            let cet_id = data.examID;
+                            stu_name.value = cet_name;
+                            stu_card.value = cet_id;
+                        }else {
+                            alert("上传的相片有问题");
+                        }
                     }else{
-                        alert("mdzz");
+                        alert("上传失败");
                     }
                 },
                 error: function(res) {
@@ -174,7 +178,7 @@
             "openid": openid,
             "type": type
         }
-        
+
         $.ajax({
             type: 'POST',
             url: "/UserData.php",
