@@ -48,6 +48,7 @@
         dom.onchange = function() {
             // if()
             let size = this.files[0].size / (1024 * 1024); //获取图片大小
+            alert(size);
             let imgType = this.files[0].type.slice(this.files[0].type.indexOf("/") + 1); //获取图片的种类
             //限制图片等格式
             if (imgType === "png" || imgType === "jpeg" || imgType === "bmp" || imgType === "jpg") {
