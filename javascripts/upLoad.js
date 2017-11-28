@@ -80,7 +80,6 @@
                 url: "/photoToWords.php",
                 data: dt,
                 success: function(res) {
-                    load.style.display = "none";
                     // alert(JSON.stringify(res));
                     if(res.status === 200){
                         alert(123);
@@ -90,8 +89,9 @@
                         let cet_id = data.examID;
                         stu_name.value = cet_name;
                         stu_card.value = cet_id;
+                        load.style.display = "none";
                     }else{
-                        alert("mdzz");
+                        alert("识别失败");
                     }
                 },
                 error: function(res) {
@@ -118,7 +118,6 @@
         registLogin();
         //获取openid
         let openid = getOpenId();
-        let maxsize = 4*1024*1024;//2M 
         let dt = {
             "openid": openid,
             "picture": res
