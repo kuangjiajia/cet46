@@ -586,7 +586,7 @@ function initMkgoCrop(mkCrop) {
 			okObj.c2d.drawImage(this, 0, 0);
 
 			//ajax发送数据值后台
-			var compress = okObj.cas.toDataURL('image/png',0.8); //压缩0.8
+			var compress = okObj.cas.toDataURL('image/png',0.7); //压缩0.7
 			//显示的图片数据
 			var imgdata = okObj.cas.toDataURL('image/png');
 			//保持裁剪数据
