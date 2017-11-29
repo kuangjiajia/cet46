@@ -95,6 +95,7 @@
                         load.style.display = "none";
                     }else{
                         alert("识别失败");
+                        load.style.display = "none";
                     }
                 },
                 error: function(res) {
