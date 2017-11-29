@@ -128,7 +128,7 @@ function initMkgoCrop(mkCrop) {
 	appendChild(btnObj.btndiv, btnObj.cutbtn);
 	//设置裁剪编辑按钮层的css
 	setCasCss(btnObj.btndiv, '', '',
-		{'position': 'absolute', 'top': (screenH-49)+'px', 'left': '0px', 'width': screenW+'px', 'height': '43px', 'paddingTop': '3px', 'backgroundColor': '#000000', 'textAlign': 'center', 'opacity': 0.5, 'zIndex': 2});
+		{'position': 'fixed', 'bottom': '0px', 'left': '0px', 'width': screenW+'px', 'height': '43px', 'paddingTop': '3px', 'backgroundColor': '#000000', 'textAlign': 'center', 'opacity': 0.5, 'zIndex': 2});
 	//设置左旋按钮css
 	setCasCss(btnObj.leftbtn, '', '',
 		{'width': '40px', 'height': '40px', 'display': 'inline-block', 'marginRight': '30px'});
