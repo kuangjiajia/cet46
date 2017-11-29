@@ -74,7 +74,6 @@
      //点击上传照片按钮发生的事情
 	function upLoad(dt,res) {
 		btn.addEventListener("click",function() {
-            alert(123);
             load.style.display = "block";
             $.ajax({
                 type: 'POST',
@@ -101,7 +100,8 @@
                 },
                 error: function(res) {
                     console.log(res);
-                    alert(123);
+                    alert("识别失败");
+                    load.style.display = "none";
                 },
                 dataType: "json"
             });
@@ -181,20 +181,24 @@
             "openid": openid,
             "type": type
         }
-
-        $.ajax({
-            type: 'POST',
-            url: "/UserData.php",
-            data: dt,
-            success: function(res) {
-                window.location.href = toUrl;
-            },
-            error: function(res) {
-                console.log(res);
-                alert(JSON.stringify(res));
-            },
-            dataType: "json"
-        });
+        var regNum = /^\d{15}$/;
+        if(!regNum.test(parseInt(id))){
+            alert("准考证号位数不对");
+        }else{
+            $.ajax({
+                type: 'POST',
+                url: "/UserData.php",
+                data: dt,
+                success: function(res) {
+                    window.location.href = toUrl;
+                },
+                error: function(res) {
+                    console.log(res);
+                    alert(JSON.stringify(res));
+                },
+                dataType: "json"
+            });
+        }
     })
 
 
