@@ -171,7 +171,6 @@
         var name = stu_name.value;
         var id = stu_card.value;
         var type = xxx ? 2 : 3;
-        // alert(type);
         var toUrl = xxx ? "./modifySuccess.html" :"./depositSuccess.html";
         var openid = xxx ? getSecondOpenId() : getOpenId();
         var dt = {
@@ -193,7 +192,7 @@
                 },
                 error: function(res) {
                     console.log(res);
-                    alert(JSON.stringify(res));
+                    alert("上传失败");
                 },
                 dataType: "json"
             });
