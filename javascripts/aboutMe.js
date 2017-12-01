@@ -1,4 +1,4 @@
-let nowUrl = decodeURIComponent(escape(window.location.href));
+let nowUrl = decodeURIComponent(window.location.href);
 alert(nowUrl);
 function param(url) {
     const index = url.indexOf("?");
