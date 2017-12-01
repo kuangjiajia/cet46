@@ -204,8 +204,6 @@
             "openid": openid,
             "type": type
         }
-        alert(dt);
-        alert(toUrl);
         var regNum = /^\d{15}$/;
         if(!regNum.test(parseInt(id))){
             alert("准考证号位数不对");
