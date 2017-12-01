@@ -139,6 +139,7 @@
 
     function getSecondOpenId() {
         let url = decodeURIComponent((window.location.href));
+        alert(url);
         const index = url.indexOf("?");
         let str = url.slice(index+1);
         let json = str.split("&");
