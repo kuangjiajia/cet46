@@ -1,5 +1,12 @@
 var sub = document.querySelector(".submit");
 
+function getOpenId() {
+    let search = window.location.search;
+    let index = search.indexOf("=");
+    let openid = search.substr(index+1);
+    return openid;
+}
+
 sub.addEventListener("click",() => {
     //出现过度动画
     let openid = getOpenId();
