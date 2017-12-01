@@ -1,4 +1,26 @@
-let nowUrl = decodeURIComponent(window.location.href);
+function URLdecode(str) {  
+    var ret = "";  
+    for(var i=0;i<str.length;i++) {  
+            var chr = str.charAt(i);  
+            if(chr == "+") {  
+                    ret += " ";  
+            }else if(chr=="%") {  
+                    var asc = str.substring(i+1,i+3);  
+                    if(parseInt("0x"+asc)>0x7f) {  
+                            ret += decodeURI("%"+ str.substring(i+1,i+9));  
+                            i += 8;  
+                    }else {  
+                            ret += String.fromCharCode(parseInt("0x"+asc));  
+                            i += 2;  
+                    }  
+            }else {  
+                    ret += chr;  
+            }  
+    }  
+    return ret;  
+} 
+
+let nowUrl = URLdecode(window.location.href);
 alert(nowUrl);
 function param(url) {
     const index = url.indexOf("?");
