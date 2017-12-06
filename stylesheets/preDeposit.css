@@ -36,7 +36,7 @@ header.head {
   font-size: .26rem;
   color: white;
   text-align: center;
-  background-color: #f6c07d;
+  background-color:#FFB257;
 }
 .card-message .take-photo input[type="file"] {
   position: absolute;

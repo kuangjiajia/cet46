@@ -24,7 +24,7 @@ ul{
   list-style: none;
 }
 footer{
-   position: fixed;
+   position: absolute;
    bottom: 0;
    left: 0;
    width: 100%;
@@ -75,4 +75,7 @@ footer p a{
     transform: scale(1);
     -webkit-transform: scale(1);
   }
+}
+.icon{
+  border-radius: .04rem;
 }

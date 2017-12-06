@@ -11,6 +11,7 @@ header.head .icon {
   width: 0.08rem;
   height: 0.38rem;
   margin: 0 .1rem 0 0;
+  border-radius: .04rem;
   background-color: #9fd7fb;
 }
 header.head .take-photo {
@@ -24,7 +25,7 @@ header.head .take-photo {
   font-size: .26rem;
   color: white;
   text-align: center;
-  background-color: #f6c07d;
+  background-color:#FFB257;
 }
 header.head .take-photo input[type="file"] {
   position: absolute;
@@ -64,6 +65,7 @@ header.head .take-photo input[type="file"] {
   width: 0.08rem;
   height: 0.38rem;
   margin: 0 .1rem 0 0;
+  border-radius: .04rem;
   background-color: #9fd7fb;
 }
 .remind span {

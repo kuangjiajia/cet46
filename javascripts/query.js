@@ -6,5 +6,3 @@ let dt = {
     "openid": openid,
     "type": 1
 }
-// alert(JOSN.stringify(search));
-alert(search);
