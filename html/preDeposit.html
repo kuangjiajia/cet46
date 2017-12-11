@@ -64,3 +64,14 @@
 </html>
 <script type="text/javascript" src="../javascripts/mkgo-crop.js" ></script>
 <script type="text/javascript" src="../javascripts/upLoad.js"></script>
+<script>
+    var h=$(window).height();
+    $(window).resize(function() {
+        if($(window).height()<h){
+            $('footer').hide();
+        }
+        if($(window).height()>=h){
+            $('footer').show();
+        }
+    });
+</script>
