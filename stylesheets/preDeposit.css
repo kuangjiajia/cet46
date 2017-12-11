@@ -56,6 +56,7 @@ header.head {
   display: block;
   width: 5.76rem;
   height: 100%;
+  box-sizing: border-box;
   margin: 0 auto;
   border-bottom: .02rem solid #d6eff1;
   font-family: PingFangSC-Regular;
@@ -70,6 +71,7 @@ header.head {
   display: block;
   width: 5.76rem;
   height: 100%;
+  box-sizing: border-box;
   margin: 3px auto;
   border-bottom: .02rem solid #d6eff1;
   font-family: PingFangSC-Regular;
