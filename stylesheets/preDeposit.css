@@ -55,7 +55,7 @@ header.head {
 .stu-name input {
   display: block;
   width: 5.76rem;
-  height: 100%;
+  height: 90%;
   box-sizing: border-box;
   margin: 0 auto;
   border-bottom: .02rem solid #d6eff1;
@@ -71,7 +71,7 @@ header.head {
 .card-number input {
   display: block;
   width: 5.76rem;
-  height: 100%;
+  height: 90%;
   box-sizing: border-box;
   margin: 0 auto;
   border-bottom: .02rem solid #d6eff1;
