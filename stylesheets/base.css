@@ -79,4 +79,4 @@ footer p a{
 .icon{
   border-radius: .04rem;
 }
-input{-webkit-tap-highlight-color:rgba(255,0,0,0);}
+button,input{-webkit-tap-highlight-color:rgba(255,0,0,0);}
