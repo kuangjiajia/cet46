@@ -139,27 +139,27 @@
 
 
 
-    function URLdecode(str) {  
-        var ret = "";  
-        for(var i=0;i<str.length;i++) {  
-                var chr = str.charAt(i);  
-                if(chr == "+") {  
-                        ret += " ";  
-                }else if(chr=="%") {  
-                        var asc = str.substring(i+1,i+3);  
-                        if(parseInt("0x"+asc)>0x7f) {  
-                                ret += decodeURI("%"+ str.substring(i+1,i+9));  
-                                i += 8;  
-                        }else {  
-                                ret += String.fromCharCode(parseInt("0x"+asc));  
-                                i += 2;  
-                        }  
-                }else {  
-                        ret += chr;  
-                }  
-        }  
-        return ret;  
-    } 
+    function URLdecode(str) {
+        var ret = "";
+        for(var i=0;i<str.length;i++) {
+                var chr = str.charAt(i);
+                if(chr == "+") {
+                        ret += " ";
+                }else if(chr=="%") {
+                        var asc = str.substring(i+1,i+3);
+                        if(parseInt("0x"+asc)>0x7f) {
+                                ret += decodeURI("%"+ str.substring(i+1,i+9));
+                                i += 8;
+                        }else {
+                                ret += String.fromCharCode(parseInt("0x"+asc));
+                                i += 2;
+                        }
+                }else {
+                        ret += chr;
+                }
+        }
+        return ret;
+    }
 
     function getSecondOpenId() {
         let url = URLdecode(window.location.href);
@@ -184,7 +184,7 @@
         var selectimginp = document.createElement("input");
         selectimginp.setAttribute("id","selectimginp");
         selectimginp.setAttribute("type","file");
-        selectimginp.setAttribute("capture","camera");
+        // selectimginp.setAttribute("capture","camera");
  	    selectimginp.setAttribute('accept', 'image/*');
 
         selChange(selectimginp);
@@ -223,5 +223,3 @@
             });
         }
     })
-
-
