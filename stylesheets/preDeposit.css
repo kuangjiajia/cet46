@@ -107,7 +107,7 @@ header.head {
   width: 5.62rem;
   height: .88rem;
   line-height: .88rem;
-  margin: .6rem auto;
+  margin: 0 auto .6rem auto;
   text-align: center;
   border-radius: .4rem;
   background-color: #79c3f6;

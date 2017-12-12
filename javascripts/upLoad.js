@@ -1,3 +1,4 @@
+	window.userDataUrl = userDataUrl = "/UserData.php";
 	//图像裁剪层对象
 	var cutbox = document.getElementById('cutbox');
 	//图像预览层对象
@@ -7,17 +8,17 @@
 	//图像裁剪数据收集的input对象
 	var inp = document.getElementById('imgdata');
 	//上传按钮
-    var btn = document.querySelector(".upPhoto");
-    //姓名
-    var stu_name = document.querySelector(".name");
-    //证号
-    var stu_card = document.querySelector(".card");
-    // window.devicePixelRatio
-    var load = document.querySelector(".load");
-    //submit提交
-    var sub = document.querySelector(".submit");
-    //裁剪配置信息
-    var xxx = document.querySelector(".head .icon");
+  var btn = document.querySelector(".upPhoto");
+  //姓名
+  var stu_name = document.querySelector(".name");
+  //证号
+  var stu_card = document.querySelector(".card");
+  // window.devicePixelRatio
+  var load = document.querySelector(".load");
+  //submit提交
+  var sub = document.querySelector(".submit");
+  //裁剪配置信息
+  var xxx = document.querySelector(".head .icon");
  	var mkCrop = {
 		//图片裁剪确定成功后回调函数
 		'back_fnc': back_fnc,
@@ -52,7 +53,7 @@
             //限制图片等格式
             if (imgType === "png" || imgType === "jpeg" || imgType === "bmp" || imgType === "jpg") {
                 //限制图片大小
-                if(size > 4) {
+                if(size > 8) {
                     alert("上传的文件过大")
                 }else{
                     var reader = new FileReader();
@@ -210,7 +211,7 @@
         }else{
             $.ajax({
                 type: 'POST',
-                url: "/UserData.php",
+                url: userDataUrl,
                 data: dt,
                 success: function(res) {
                     window.location.href = toUrl;
