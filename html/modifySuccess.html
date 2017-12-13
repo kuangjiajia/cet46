@@ -24,10 +24,10 @@
       <button class="submit">退出</button>
       <footer class="foot">
         <p>
-          <a href="#">意见反馈@红岩网校</a>          
-        </p>      
+          <a href="#">意见反馈@红岩网校</a>
+        </p>
         <p>2017红岩网校工作站</p>
-      </footer>	
+      </footer>
   </body>
   <script type="text/javascript" src="../javascripts/bubble.js"></script>
   <script>
@@ -36,5 +36,29 @@
     WeixinJSBridge.call('closeWindow');
   })
   </script>
+  <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+  <script src="https://wx.idsbllp.cn/wx-api/share.js"></script>
+  <script>
+    WXSHARE.config({debug: false});
+    WXSHARE.ready(function() {
+      var option = {
+        title: "我正在参与 ”四六级资料拍照预存“ 活动，你也加入吧！",
+        link: "https://wx.idsbllp.cn/cet2017/UserInitlize.php",
+        imgUrl: 'https://wx.idsbllp.cn/cet46/cet46/images/revise.png',
+        desc: '',
+        type: '',
+        success: function() {
+          console.log('分享成功');
+        },
+        cancel: function() {
+          console.log('取消分享');
+        },
+      };
+      wx.onMenuShareTimeline(option);
+      wx.onMenuShareAppMessage(option);
+      wx.onMenuShareQQ(option);
+      wx.onMenuShareWeibio(option);
+      wx.onMenuShareQZone(option);
+    });
+  </script>
 </html>
- 
