@@ -38,29 +38,29 @@
       </div>
   </body>
   <script type="text/javascript" src="../javascripts/bubble.js"></script>
-  <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+  <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
   <script src="https://wx.idsbllp.cn/wx-api/share.js"></script>
   <script>
     WXSHARE.config({debug: false});
-  	WXSHARE.ready(function() {
-  		var option = {
-  			title: "我正在参与 ”四六级资料拍照预存“ 活动，你也加入吧！",
-  			link: "https://wx.idsbllp.cn/cet2017/UserInitlize.php",
-  			imgUrl: 'https://wx.idsbllp.cn/cet46/cet46/images/revise.png',
-  			desc: '',
-  			type: '',
-  			success: function() {
-  				console.log('分享成功');
-  			},
-  			cancel: function() {
-  				console.log('取消分享');
-  			},
-  		};
-  		wx.onMenuShareTimeline(option);
-  		wx.onMenuShareAppMessage(option);
-  		wx.onMenuShareQQ(option);
-  		wx.onMenuShareWeibio(option);
-  		wx.onMenuShareQZone(option);
-  	});
-	</script>
+    WXSHARE.ready(function() {
+      var option = {
+        title: "四六级准考证预存开始啦～～～及时分数推送，全新的拍照识别，妈妈再也不用担心我准考证会丢失啦！",
+        link: "https://wx.idsbllp.cn/dynamic/http/cet.redrock.team/UserInitlize.php",
+        imgUrl: 'https://wx.idsbllp.cn/dynamic/http/cet.redrock.team/cet46/images/revise.png',
+        desc: '小伙伴快来参加预存活动啊～～～',
+        type: '',
+        success: function() {
+          console.log('分享成功');
+        },
+        cancel: function() {
+          console.log('取消分享');
+        },
+      };
+      wx.onMenuShareTimeline(option);
+      wx.onMenuShareAppMessage(option);
+      wx.onMenuShareQQ(option);
+      wx.onMenuShareWeibio(option);
+      wx.onMenuShareQZone(option);
+    });
+  </script>
 </html>
