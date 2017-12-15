@@ -78,7 +78,7 @@
             load.style.display = "block";
             $.ajax({
                 type: 'POST',
-                url: "https://wx.idsbllp.cn/dynamic/http/cet.redrock.team/UserInitlize.php",
+                url: "/dynamic/http/cet.redrock.team/photoToWords.php",
                 data: dt,
                 success: function(res) {
                     // alert(JSON.stringify(res));
