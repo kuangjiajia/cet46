@@ -208,22 +208,24 @@
         var regNum = /^\d{15}$/;
 				if(name.trim()==='') {
 					alert("名字不能为空");
+				else{
+					if(!regNum.test(parseInt(id))){
+							alert("准考证号位数不对");
+					}else{
+							$.ajax({
+									type: 'POST',
+									url: userDataUrl,
+									data: dt,
+									success: function(res) {
+											window.location.href = toUrl;
+									},
+									error: function(res) {
+											console.log(res);
+											alert("上传失败");
+									},
+									dataType: "json"
+							});
+					}
 				}
-        if(!regNum.test(parseInt(id))){
-            alert("准考证号位数不对");
-        }else{
-            $.ajax({
-                type: 'POST',
-                url: userDataUrl,
-                data: dt,
-                success: function(res) {
-                    window.location.href = toUrl;
-                },
-                error: function(res) {
-                    console.log(res);
-                    alert("上传失败");
-                },
-                dataType: "json"
-            });
-        }
+				}
     })
