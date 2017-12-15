@@ -1,4 +1,4 @@
-	window.userDataUrl = userDataUrl = "https://wx.idsbllp.cn/dynamic/http/cet.redrock.team/UserInitlize.php";
+	window.userDataUrl = userDataUrl = "/dynamic/http/cet.redrock.team/UserInitlize.php";
 	//图像裁剪层对象
 	var cutbox = document.getElementById('cutbox');
 	//图像预览层对象
