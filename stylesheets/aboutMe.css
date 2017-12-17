@@ -16,9 +16,9 @@ header.head .icon {
 }
 header.head .take-photo {
   position: relative;
-  width: 1.6rem;
+  width: 2.3rem;
   height: .6rem;
-  margin-left: 3.58rem;
+  margin-left: 2.5rem;
   border: none;
   outline: none;
   border-radius: .4rem;
@@ -31,9 +31,9 @@ header.head .take-photo input[type="file"] {
   position: absolute;
   top: 0;
   right: 0;
-  font-size: 14px;
+  font-size: .26rem;
   background-color: #fff;
-  width: 1.6rem;
+  width: 2.6rem;
   opacity: 0;
   filter: alpha(opacity=0);
 }
