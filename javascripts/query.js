@@ -6,3 +6,16 @@ let dt = {
     "openid": openid,
     "type": 1
 }
+
+$.ajax({
+    type: "get",
+    url: "/cet.php",
+    success: function(data) {
+        console.log()
+    },
+    dataType: "json",
+    data: {
+        name: "杨俊逸",
+
+    }
+})
