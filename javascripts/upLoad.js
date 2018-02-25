@@ -81,6 +81,7 @@
                 url: "/photoToWords.php",
                 data: dt,
                 success: function(res) {
+                    console.log(res)
                     // alert(JSON.stringify(res));
                     if(res.status === 200){
                         console.log(res);
