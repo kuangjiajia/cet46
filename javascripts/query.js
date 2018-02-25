@@ -29,3 +29,6 @@ $(".listen-point").innerHTML = json['listening']
 $(".read-type").innerHTML = json['reading']
 $(".write-point").innerHTML = json['writing']
 
+
+
+console.log(json)
