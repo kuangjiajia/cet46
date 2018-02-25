@@ -221,7 +221,8 @@
 									data: dt,
 									success: function(res) {
                                             console.log(res)
-											// window.location.href = toUrl;
+                                            const paramVal = jsonToparams(res.data)
+											window.location.href = './query.html' + paramVal
 									},
 									error: function(res) {
 											console.log(res);
@@ -232,3 +233,15 @@
 					}
 				}
     })
+
+
+
+    function jsonToparams(json) {
+        var params = "?"
+        for(var prop in json) {
+            propVal = prop + '=' + json[prop]
+            params += propVal
+        }
+        console.log(params)
+        return params
+    }
