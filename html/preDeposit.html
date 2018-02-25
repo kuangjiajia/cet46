@@ -26,7 +26,7 @@
         <input type="text" placeholder="姓名" class="name" autofocus="autofocus">
       </div>
       <div class="card-number">
-        <input type="text" placeholder="准考证号" class="card">
+        <input type="text" placeholder="准考证号" class="card" >
       </div>
       <h1 class="notice-method">
         <span class="icon"></span>
@@ -70,33 +70,31 @@
 <script type="text/javascript" src="../javascripts/resize.js"></script>
 <script type="text/javascript" src="../javascripts/jquery.js"></script>
 <script>
+var name = document.querySelector(".name")
+var card = document.querySelector(".card")
+var btnSubmit = document.querySelector(".submit")
 
-  var name = document.querySelector(".name")
-  var card = document.querySelector(".card")
-  var btn = document.querySelector(".submit")
-
-  btn.addEventListener("click",function() {
-    var nameVal = name.value
-    var cardVal = card.value
-    $.ajax({
-      type: "get",
-      url: "/cet.php",
-      success: function(data) {
-          alert(JSON.stringify(data))
-      },
-      dataType: "json",
-      data: {
-          "name": nameVal,
-          "id": cardVal,
-          "openId": "" 
-      }
-  })
-  })
-
+btnSubmit.addEventListener("click",function() {
+  var nameVal = name.value
+  var cardVal = card.value
+  $.ajax({
+    type: "get",
+    url: "/cet.php",
+    success: function(data) {
+        alert(JSON.stringify(data))
+    },
+    dataType: "json",
+    data: {
+        "name": nameVal,
+        "id": cardVal,
+        "openId": "" 
+    }
+})
+})
 </script>
 <!-- <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> -->
 <!-- <script src="https://wx.idsbllp.cn/wx-api/share.js"></script> -->
-<!-- <script>
+<script>
   WXSHARE.config({debug: false});
   WXSHARE.ready(function() {
     var option = {
@@ -118,4 +116,4 @@
     wx.onMenuShareWeibo(option);
     wx.onMenuShareQZone(option);
   });
-</script> -->
+</script>
