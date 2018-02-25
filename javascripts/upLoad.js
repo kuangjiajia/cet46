@@ -217,7 +217,7 @@
 					}else{
 							$.ajax({
 									type: 'POST',
-									url: './cet.php',
+									url: '/cet.php',
 									data: dt,
 									success: function(res) {
                                         console.log(res)
