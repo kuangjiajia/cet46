@@ -91,11 +91,12 @@
                             stu_name.value = cet_name;
                             stu_card.value = cet_id;
                         }else{
-                            alert("识别失败");
+                            alert("识别失败 200");
+                            
                         }
                         load.style.display = "none";
                     }else{
-                        alert("识别失败");
+                        alert("识别失败 404");
                         load.style.display = "none";
                     }
                 },
