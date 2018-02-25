@@ -1,6 +1,6 @@
 function paramsTojson(url) {
     var json = {}
-    var params = url.split("?")[1]
+    var params = decodeURI(url.split("?")[1])
     var props = params.split("&")
     for(var i = 0; i < props.length; i++) {
         var tmp = props[i].split("=")

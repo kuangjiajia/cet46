@@ -222,7 +222,7 @@
 									success: function(res) {
                                             console.log(res)
                                             const paramVal = jsonToparams(res.data)
-											window.location.href = './query.html' + paramVal
+											window.location.href = encodeURI('./query.html' + paramVal)
 									},
 									error: function(res) {
 											console.log(res);
