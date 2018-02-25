@@ -22,10 +22,10 @@
 	</header>
 	<div class="content">
 		<div class="stu-name">
-			<input type="text" class="name" placeholder="姓名">
+			<input type="text" class="name" placeholder="姓名" autofocus="autofocus">
 		</div>
 		<div class="card-number">
-		  <input type="text" class="card" placeholder="学号">
+		  <input type="text" class="card" placeholder="准考证号">
 		</div>
 	</div>
 	<h1 class="remind">
@@ -87,6 +87,11 @@
       cancel: function() {
         console.log('取消分享');
       },
+
+
+
+
+
     };
     wx.onMenuShareTimeline(option);
     wx.onMenuShareAppMessage(option);
