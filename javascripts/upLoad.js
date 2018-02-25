@@ -220,8 +220,8 @@
 									url: '/cet.php',
 									data: dt,
 									success: function(res) {
-                                        console.log(res)
-											window.location.href = toUrl;
+                                            console.log(res)
+											// window.location.href = toUrl;
 									},
 									error: function(res) {
 											console.log(res);
