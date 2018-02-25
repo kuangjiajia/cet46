@@ -78,7 +78,7 @@ btnSubmit.addEventListener("click",function() {
   var nameVal = name.value
   var cardVal = card.value
   $.ajax({
-    type: "get",
+    type: "POST",
     url: "/cet.php",
     success: function(data) {
         alert(JSON.stringify(data))
@@ -87,7 +87,7 @@ btnSubmit.addEventListener("click",function() {
     data: {
         "name": nameVal,
         "id": cardVal,
-        "openId": "" 
+        "openId": ""
     }
 })
 })
