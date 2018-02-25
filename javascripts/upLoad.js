@@ -1,4 +1,4 @@
-	window.userDataUrl = userDataUrl = "/cet/UserData.php";
+	window.userDataUrl = userDataUrl = "/UserData.php";
 	//图像裁剪层对象
 	var cutbox = document.getElementById('cutbox');
 	//图像预览层对象
@@ -78,7 +78,7 @@
             load.style.display = "block";
             $.ajax({
                 type: 'POST',
-                url: "/cet/photoToWords.php",
+                url: "/photoToWords.php",
                 data: dt,
                 success: function(res) {
                     // alert(JSON.stringify(res));
