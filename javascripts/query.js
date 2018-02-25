@@ -10,12 +10,12 @@ function paramsTojson(url) {
 }
 
 var json = paramsTojson(window.location.href)
-$(".name").innerHTML = json['name']
-$(".card").innerHTML = json['card']
-$(".total-point").innerHTML = json['sumScore']
-$(".listen-point").innerHTML = json['listening']
-$(".read-type").innerHTML = json['reading']
-$(".write-point").innerHTML = json['writing']
+$(".name").html(json['name'])
+$(".card").html(json['card'])
+$(".total-point").html(json['sumScore'])
+$(".listen-point").html(json['listening'])
+$(".read-type").html(json['reading'])
+$(".write-point").html(json['writing'])
 
 
 
