@@ -217,16 +217,17 @@
 					}else{
 							$.ajax({
 									type: 'POST',
-									url: userDataUrl,
+									url: './cet.php',
 									data: dt,
 									success: function(res) {
+                                        console.log(res)
 											window.location.href = toUrl;
 									},
 									error: function(res) {
 											console.log(res);
 											alert("上传失败");
-									},
-									dataType: "json"
+									}
+									// dataType: "json"
 							});
 					}
 				}
