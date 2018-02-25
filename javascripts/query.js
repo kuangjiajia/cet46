@@ -21,7 +21,7 @@ function paramsTojson(url) {
     return json
 }
 
-var json = paramsTojson(window.location.url)
+var json = paramsTojson(window.location.href)
 $(".name").innerHTML = json['name']
 $(".card").innerHTML = json['card']
 $(".total-point").innerHTML = json['sumScore']
