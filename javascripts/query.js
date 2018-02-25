@@ -11,10 +11,10 @@ function paramsTojson(url) {
 
 var json = paramsTojson(window.location.href)
 $(".name").html(json['name'])
-$(".card").html(json['card'])
+$(".card").html(json['examID'])
 $(".total-point").html(json['sumScore'])
 $(".listen-point").html(json['listening'])
-$(".read-type").html(json['reading'])
+$(".read-point").html(json['reading'])
 $(".write-point").html(json['writing'])
 
 
