@@ -239,7 +239,7 @@
     function jsonToparams(json) {
         var params = "?"
         for(var prop in json) {
-            propVal = prop + '=' + json[prop]
+            propVal = prop + '=' + json[prop] + '&'
             params += propVal
         }
         console.log(params)
