@@ -1,12 +1,12 @@
-	window.userDataUrl = userDataUrl = "/UserData.php";
-	//图像裁剪层对象
-	var cutbox = document.getElementById('cutbox');
-	//图像预览层对象
-	var prebox = document.getElementById('prebox');
-	//图像预览对象
-	var preimg = document.getElementById('preimg');
-	//图像裁剪数据收集的input对象
-	var inp = document.getElementById('imgdata');
+    window.userDataUrl = userDataUrl = "/UserData.php";
+    //图像裁剪层对象
+    var cutbox = document.getElementById('cutbox');
+    //图像预览层对象
+    var prebox = document.getElementById('prebox');
+    //图像预览对象
+    var preimg = document.getElementById('preimg');
+    //图像裁剪数据收集的input对象
+    var inp = document.getElementById('imgdata');
 	//上传按钮
   var btn = document.querySelector(".upPhoto");
   //姓名
@@ -196,6 +196,7 @@
 
     sub.addEventListener("click",() => {
         //出现过度动画
+        load.style.display = "block";
         var name = stu_name.value;
         var id = stu_card.value;
         var type = xxx ? 2 : 3;
@@ -216,22 +217,25 @@
 							alert("准考证号位数不对");
 					}else{
 							$.ajax({
-									type: 'POST',
-									url: '/cet.php',
-									data: dt,
-									success: function(res) {
-                                            if(res.status !== 200) {
-                                                alert("姓名或准考证号错误了，请重试!")
-                                            }else{
-                                                const paramVal = jsonToparams(res.data)
-                                                window.location.href = encodeURI('./query.html' + paramVal)
-                                            }
-									},
-									error: function(res) {
-											console.log(res);
-											alert("上传失败");
-									}
-									// dataType: "json"
+                                type: 'POST',
+                                url: '/cet.php',
+                                data: dt,
+                                success: function(res) {
+                                        load.style.display = "none";
+                                        if(res.status !== 200) {
+                                            alert("姓名或准考证号错误了，请重试!")
+                                        }else{
+                                            const paramVal = jsonToparams(res.data)
+                                            window.location.href = encodeURI('./query.html' + paramVal)
+                                        }
+                                },
+                                error: function(jqXHR, textStatus, errorThrown){
+                                    load.style.display = "none";
+                                    if(textStatus=="timeout"){
+                                        $("#tips").html("加载超时，请重试");
+                                    }
+                                },
+                                timeout: 10000
 							});
 					}
 				}
