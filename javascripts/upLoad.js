@@ -196,7 +196,8 @@
 
     sub.addEventListener("click",() => {
         var time = new Date().getTime()
-        if(time >= 1519693200) {
+
+        if(time >= 1519693200000) {
             load.style.display = "block";
             var name = stu_name.value;
             var id = stu_card.value;
