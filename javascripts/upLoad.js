@@ -220,7 +220,6 @@
 									url: '/cet.php',
 									data: dt,
 									success: function(res) {
-                                            alert(JSON.stringify(res));
                                             if(res.status === 500) {
                                                 alert("姓名或准考证号错误了，请重试!")
                                             }else{
