@@ -195,54 +195,55 @@
     }
 
     sub.addEventListener("click",() => {
-        //出现过度动画
-        load.style.display = "block";
-        var name = stu_name.value;
-        var id = stu_card.value;
-        var type = xxx ? 2 : 3;
-        var toUrl = xxx ? "./modifySuccess.html" :"./depositSuccess.html";
-        var openid = xxx ? getSecondOpenId() : getOpenId();
-        var dt = {
-            "name": name,
-            "id": id,
-            "openid": openid,
-            "type": type
+        var time = new Date().getTime()
+        if(time >= 1519693200) {
+            load.style.display = "block";
+            var name = stu_name.value;
+            var id = stu_card.value;
+            var type = xxx ? 2 : 3;
+            var toUrl = xxx ? "./modifySuccess.html" :"./depositSuccess.html";
+            var openid = xxx ? getSecondOpenId() : getOpenId();
+            var dt = {
+                "name": name,
+                "id": id,
+                "openid": openid,
+                "type": type
+            }
+            var regNum = /^\d{15}$/;
+            if(name.trim()==='') {
+                alert("名字不能为空");
+            }
+            else{
+                if(!regNum.test(parseInt(id))){
+                        alert("准考证号位数不对");
+                }else{
+                    $.ajax({
+                        type: 'POST',
+                        url: '/game/cet/cet.php',
+                        data: dt,
+                        success: function(res) {
+                                load.style.display = "none";
+                                if(res.status !== 200) {
+                                    alert("姓名或准考证号错误了，请重试!")
+                                }else{
+                                    const paramVal = jsonToparams(res.data)
+                                    window.location.href = encodeURI('./query.html' + paramVal)
+                                }
+                        },
+                        error: function(jqXHR, textStatus, errorThrown){
+                            load.style.display = "none";
+                            if(textStatus=="timeout"){
+                                alert("加载超时,请重试")
+                            }
+                        },
+                        timeout: 10000
+                    });
+                }
+            }
+        }else{
+            alert("还未到查询时间，莫慌");
         }
-        var regNum = /^\d{15}$/;
-				if(name.trim()==='') {
-					alert("名字不能为空");
-				}
-				else{
-					if(!regNum.test(parseInt(id))){
-							alert("准考证号位数不对");
-					}else{
-							$.ajax({
-                                type: 'POST',
-                                url: '/game/cet/cet.php',
-                                data: dt,
-                                success: function(res) {
-                                        load.style.display = "none";
-                                        if(res.status !== 200) {
-<<<<<<< HEAD
-                                            alert("姓名或准考证号错误,或未到开放时间，请重试!")
-=======
-                                            alert("姓名或准考证号错误了，请重试!")
->>>>>>> 88d5045de99df306cc240702f3a2889abfe160b9
-                                        }else{
-                                            const paramVal = jsonToparams(res.data)
-                                            window.location.href = encodeURI('./query.html' + paramVal)
-                                        }
-                                },
-                                error: function(jqXHR, textStatus, errorThrown){
-                                    load.style.display = "none";
-                                    if(textStatus=="timeout"){
-                                        $("#tips").html("加载超时，请重试");
-                                    }
-                                },
-                                timeout: 10000
-							});
-					}
-				}
+        //出现过度动画
     })
 
 
