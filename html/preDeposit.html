@@ -65,28 +65,6 @@
   <button style="display:none;" class="focusBtn"></button>
   </body>
 </html>
-<script>
-  var name = document.querySelector(".name")
-  var card = document.querySelector(".card")
-  var pathName = window.location.href
-  function param(url) {
-      var index = url.indexOf("?");
-      var str = url.slice(index+1);
-      var json = str.split("&");
-      var obj = {};
-      for(var i = 0 ; i < json.length; i++){
-          obj[json[i].slice(0,json[i].indexOf("="))] = json[i].slice(json[i].indexOf("=")+1);
-      }
-      return obj;
-  }
-  // const json = param(pathName)
-  if(pathName.indexOf("?") > -1) {
-    var json = param(decodeURI(pathName))
-    name.value = json['name']
-    card.value = json['id']
-  }
-  // if(json)
-</script>
 <script type="text/javascript" src="../javascripts/mkgo-crop.js" ></script>
 <script type="text/javascript" src="../javascripts/upLoad.js"></script>
 <script type="text/javascript" src="../javascripts/resize.js"></script>

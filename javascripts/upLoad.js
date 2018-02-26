@@ -260,3 +260,24 @@
         console.log(params)
         return params
     }
+
+
+
+
+    var pathName = window.location.href
+    function param(url) {
+        var index = url.indexOf("?");
+        var str = url.slice(index+1);
+        var json = str.split("&");
+        var obj = {};
+        for(var i = 0 ; i < json.length; i++){
+            obj[json[i].slice(0,json[i].indexOf("="))] = json[i].slice(json[i].indexOf("=")+1);
+        }
+        return obj;
+    }
+    // const json = param(pathName)
+    if(pathName.indexOf("?") > -1) {
+      var json = param(decodeURI(pathName))
+      stu_name.value = json['name']
+      stu_card.value = json['id']
+    }
