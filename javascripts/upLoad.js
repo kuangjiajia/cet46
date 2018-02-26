@@ -221,7 +221,7 @@
 									data: dt,
 									success: function(res) {
                                             // if(!res) {
-                                                alert(res);
+                                                alert(JSON.stringify(res));
                                                 // alert("请检查准考证是否成功!")
                                             // }else{
                                             //     console.log(res)
