@@ -212,10 +212,12 @@
             var regNum = /^\d{15}$/;
             if(name.trim()==='') {
                 alert("名字不能为空");
+                load.style.display = "none";                
             }
             else{
                 if(!regNum.test(parseInt(id))){
                         alert("准考证号位数不对");
+                        load.style.display = "none";
                 }else{
                     $.ajax({
                         type: 'POST',
