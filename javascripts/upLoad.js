@@ -220,9 +220,14 @@
 									url: '/cet.php',
 									data: dt,
 									success: function(res) {
-                                            console.log(res)
-                                            const paramVal = jsonToparams(res.data)
-											window.location.href = encodeURI('./query.html' + paramVal)
+                                            // if(!res) {
+                                                alert(res);
+                                                // alert("请检查准考证是否成功!")
+                                            // }else{
+                                            //     console.log(res)
+                                            //     const paramVal = jsonToparams(res.data)
+                                            //     window.location.href = encodeURI('./query.html' + paramVal)
+                                            // }
 									},
 									error: function(res) {
 											console.log(res);
