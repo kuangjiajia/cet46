@@ -223,7 +223,11 @@
                                 success: function(res) {
                                         load.style.display = "none";
                                         if(res.status !== 200) {
+<<<<<<< HEAD
                                             alert("姓名或准考证号错误,或未到开放时间，请重试!")
+=======
+                                            alert("姓名或准考证号错误了，请重试!")
+>>>>>>> 88d5045de99df306cc240702f3a2889abfe160b9
                                         }else{
                                             const paramVal = jsonToparams(res.data)
                                             window.location.href = encodeURI('./query.html' + paramVal)
