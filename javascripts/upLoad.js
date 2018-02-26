@@ -221,7 +221,7 @@
 									data: dt,
 									success: function(res) {
                                             alert(JSON.stringify(res));
-                                            if(res.status === 500) {
+                                            if(res.status !== 200) {
                                                 alert("姓名或准考证号错误了，请重试!")
                                             }else{
                                                 const paramVal = jsonToparams(res.data)
