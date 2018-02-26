@@ -78,7 +78,7 @@
             load.style.display = "block";
             $.ajax({
                 type: 'POST',
-                url: "/photoToWords.php",
+                url: "/game/cet/photoToWords.php",
                 data: dt,
                 success: function(res) {
                     console.log(res)
@@ -218,7 +218,7 @@
 					}else{
 							$.ajax({
                                 type: 'POST',
-                                url: '/cet.php',
+                                url: '/game/cet/cet.php',
                                 data: dt,
                                 success: function(res) {
                                         load.style.display = "none";
